@@ -1,0 +1,187 @@
+Prophesy of Pendor Copyright 2009-2020 James Landes (Saxondragon) all rights reserved
+
+
+3.9.5 is a full version, it is NOT compatible with 3.9.4 savegames and includes all previous hotfixes from 3.9.4.
+
+
+UP TO DATE TRANSLATIONS:
+
+- Chinese - Tiverivs, Mario, Latis, S1
+- Russian - Faraon67, Valua, Arslanbek, UndeadDuke, firon
+
+
+INFO:
+
+- extra folder in the mod directory (search your folders for “_README_POP” name):
+---- OPTIONAL_FONT_ENG - English font optimized for this mod, HIGHLY RECOMMENDED; do not use on Linux or Mac
+---- OPTIONAL_FONT_RUS_UKR_ENG - Russian and Ukrainian font plus alternative version of English one; do not use on Linux or Mac
+---- OPTIONAL_ARCHERS_SIEGE_DEFENCE_BEHAVIOUR - by Dalion - all defending archers, which appear as reinforcements, will be distributed amongst all archers spawning points; script treat all soldiers with long range weapons as archers, not only the ones in the assigned archers group; it is savegame compatible, so can be tested any time in the game
+---- OPTIONAL_TEXTURES_BY_SAXONDRAGON - alternative terrain textures done by the mod creator
+---- PROMOTIONAL FORUM BANNERS - spread the world
+
+- if you think that archery deals too much / not enough damage then open "module.ini" file located in the mod folder and find "missile_damage_speed_power = 1.2"; reduce number (minimum 0.1) to make archery more deadly, increase (maximum 2.0) to obtain opposite result
+
+- how to reduce chance for SAVEGAME CORRUPTION (apply to any Warband mod):
+--- when you want to start the new game, restart Warband first
+--- don't play with realistic saves
+--- use all 9 save slots (note: if all 9 slots are occupied, the new game can't be started - delete one)
+--- save in scenes e.g. tavern
+--- if you want to save on the world map then stop to pause the game, count to 5 (so scripts running in the background have time to finish), press save
+
+KNOWN ISSUES:
+
+- the "hold F1 flag" can't be used together with advanced formations (jkl keys; like shielsdwall), otherwise selected soldiers may start to move backward to the edge of the map; with "advanced formations" use mini-map, "hold this position" and "advance/fall back ten paces" to move groups around; POP's default (build-in Warband's) formations work fine
+- if during fight enemy stuck in inaccessible area (e.g. inside building structure) use CTRL+F4 (kill one enemy); it is not recognized as a cheat, there is no punishment, but overusing it will kill the fun pretty quickly
+- if the game become too slow, restart it; due to Warband memory leak a play session will slow down over time and many reloads accelerate this process
+- lords attack player during prisoners escape - restart current game session and repeat mission (Warband bug)
+- "Cows in the water" - remove TexturesHD folder found in the main Warband folder
+- NPC party stuck on river bank or shore - try right mouse click on it
+- very rarely the new garrisons/prisoners hotkeys may produce unexplained errors due to improper usage by players (e.g. used "take all prisoners" hotkeys on the garrisoned soldiers); this feature is build on the top of inaccessible part of engine, so use it with care, accordingly to the provided instruction:
+--- select troops/prisoner stack AND hold one of the keys combination listed below AND press give/hire/take/capture button
+--- capture all prisoners - LEFT CTRL + A
+--- take all prisoners from garrison - LEFT CTRL + A
+--- give all prisoners to garrison - LEFT CTRL + D
+--- hire all soldiers - LEFT CTRL + S
+--- give all soldiers to garrison - RIGHT CTRL + ARROW LEFT
+--- take all soldiers from garrison - RIGHT CTRL + ARROW RIGHT
+--- move stack one position up inside garrison - ARROW UP - (doesn't work if single soldier in the stack)
+--- move stack one position down inside garrison - ARROW DOWN - (doesn't work if single soldier in the stack)
+--- move stack to the top of garrison - PAGE UP - (doesn't work if single soldier in the stack)
+--- move stack to the bottom of garrison - PAGE DOWN - (doesn't work if single soldier in the stack)
+
+FIXED BUGS/ISSUES:
+
+- due to very rare bug of unknown source it was impossible to finish the game: lord was commanding not his own ("zero size”) party
+- on rare situation lord, who lost his battle and was replenishing army, could stick in an enemy walled fief (e.g. when player rebelled, switched sides); fixed thanks to Vetrogor
+- improved "use only blunt weapon" order; note: don't spam this order, wait a second or two; DOES NOT work with order issued via Backspace menu; thanks to UndeadDuke
+- KO's bounty quest - points should be added correctly when player joins the battle which was started by AI
+- fixed inappropriate upkeep for KO stronghold
+- during "Prisoner Escape" quest all guarding units (like KO/MKO/CKO knights and sergeants, household troops) will join the fight
+- fixed an issue with certain horses not being healed by Derafsh
+- some quest dialogs mistakes fixed and redone for consistency
+- fixed: if during fiefs exchange conversation player leaves dialog screen (e.g. clicked on lord's picture) name of the random lady is displayed as offered fief
+- item "Missile speed" will be displayed properly for the newly added/edited items
+- moved extra animations from walk_forward_left to walk_forward_left_polearm (thanks to Hoboistice for tips)
+
+GAMEPLAY:
+
+- all merchants will have a bit more gold and refill it quicker
+- added option to finish Heartbeat quests remotely (without any effects)
+- info about next payday will be displayed in the Reports menu (correct date will be presented after 1st game week)
+- below patrols will drop prisoners in a walled fief if they have >=35 prisoners or a ratio prisoners to healthy escort members is >=50%:
+--- Militia Patrol - in town or castle their village belongs to; Militia Patrols creation price 1000 -> 2000
+--- Knighthood Order (KO) - where chapter is located
+--- Custom Knighthood Order (CKO) - in a walled fief which CKO patrol around
+- nerfed Eyegrim's army a bit:
+--- capped at about 5000 (was unlimited)
+--- Fallen Warrior: removed not guaranteed horse, converted from units level >31 (was >=31)
+- Heretic Army has (Looting+6)% chance to drop Netherworld Shield
+- added POP Options to increase/decrease some of the CKO constants; as a result player can adjust CKO feature to the predicted game length (so CKO could be actually used in the faster games or e.g. accelerate CKO development until it reaches KO level, then set back to default)
+--- default values set as they used to be up to now
+--- all options can be changed at any time (but won't affect item is progress)
+--- chance of stats upgrade during training sessions with companion (checked every 18hr): from 1.5% to 50%, default 3%
+--- equipment cost: from 10% to 200%, default 100%, minimum 1000 denars
+--- equipping time: from 10% to 200%, default 100%, minimum 1 day
+- if KO "order challenge quest" is in progress, KO "bounty quest" won't give any troops as reward; return "order challenge quest" first, then "bounty quest" to have a chance to receive troops
+- Knights of the Griffon won't be offered by ransom brokers if their chapter don't exist
+- added new options to the menu Cheats -> Fix my game
+--- to reset jobs of blacksmith and stable boy in Old Ruins (just in case)
+--- "Purge the world" - attempt to reduce sizes of all field armies (not currently in the battle) to the selected maximum value (from 1k to 10k) by removing (starting from the bottom) stacks of troops with level <35; low level soldiers will be disbanded first (level thresholds: <=10, <=19, <=25, <=34); there is one extra option to set max to 1k and completely ignore level cap during disbanding operation
+
+TROOPS:
+
+- Demonic Magnus - replaced all human made items with their demonic versions (sword, shield, throwing axes); added extra “armor”
+- Shadow Wolves: added Empire Great Sword (to increase performance on the actual battlefield)
+- reviewed equipment of all Empire lords, added new items
+- Seer Initiate: added Foreign Short Sabre (unused and not obtainable before)
+- Omen Seeker: added Two Handed Sabre (unused before)
+- Veccavi Sentinel: Two Handed War Axe -> Desert Battle Axe (unused before)
+- Veccavi Krom Guard: Two Handed War Axe -> Desert War Axe (unused before)
+- Sarleon Nobleman: Short Sword -> Short Steel Sword (unused before)
+- D'Shar Bandit: added Desert Arming Sword (unused before)
+- Iron Circle Centurion (ICC): Immortal Shield -> Knightly Heater Shield (fits better new armor)
+- Bloodsworn Witch: Melitine Plate Boots -> Heavy Plate Greaves (better matching color)
+
+ITEMS:
+
+- banners - replaced several, adjusted Agathon Legatus’ one to fit ICCs’ color scheme
+- missiles - optimized all meshes and moved them to one texture sheet (except two unique throwing axes) to combat engine limitation (all missiles stuck in one object share the same texture)
+- weapons:
+--- improved/fixed meshes of: Practice Dagger/1H Sword/2H Sword, Foreign Sabre, Foreign Short Sabre, Short Steel Sword, Steel Sword, Long Steel Sword, Arming Sword, War/Soldier's/Military Cleaver, War Axe, Great Hammer, Steel Voulge, Hafted Blade (lods 2 3), Double Sided Lance, Scythe, Sickle,
+--- Foreign Short Sabre slash 25->30, thrust 19->20, price 80->150
+--- assigned a draw/holster sword animation to Foreign Short Sabre and Foreign Sabre
+--- Arquebus - smoke is emitted more horizontal
+--- Manopener - assigned unique model; added "unique" flag
+--- Pitch Fork - removed flags "is_pike", "spear", "overswing_spear"; added "carry_spear"
+--- Long Spiked Club, Long Hafted Knobbed Mace and Long Hafted Spiked Mace - added "overswing_musket" flag
+--- Scythe - added "is_pike" flag
+--- Asp Throwing Axes - set flag "no pick up from ground"
+--- Practice Dagger - added "wooden_parry" flag (was metal sounds when chambered)
+--- renamed current Demon Shield to Heretic Battle Shield
+- armors:
+--- improved/fixed meshes of: Bearclaw Armor (plus better female version), Bearclaw Helm (has white fur to match rest of the Bearclaw set), Iron Faceplate Helmet, Faceplate, Iron & Leather Helmet, Mail Neck Helmet, Faceplate & Mail Helmet
+--- Empire Inlayed Armor - redone model (used by ICC)
+--- Dark Padded Leather - replaced model (redsar mesh and redsar.dds texture full credits to "Russian GoT OSP") and renamed to Brown Leather Vest
+- other:
+--- Jatu Warbeast - enlarged model, riding skill 6 -> 7, non merchandise, unlockable for CKO by Warlord Zulkar (given together with Diamonds)
+--- Jatu Steppe Charger - enlarged model
+--- improved an “arena sign” (laurel, shield, sword, axe, arrow)
+--- fixed stretched textures on Wine/Oil amphora
+
+NEW ITEMS:
+
+- Demonic Magnus - redone the whole “body”; equipped with:
+--- Demon Sword - 1h, flag "no pick up from ground", unique
+--- Demon Shield - unique
+--- Demon Throwing Axes - flag "no pick up from ground", unique
+- Griffon Captain Armor - 3 versions (no cape, black cape, white cape), merchandise, unused
+- Griffon Grandmaster Armor - 2 versions (no cape, black cape), unique, unused
+- Barclay Plate with Surcoat - merchandise, used by Barclay Imperial Lanciers
+- Kraken Platemail with Surcoat - merchandise, used by Krakens
+- two golden armors - 2 versions (no cape, black/red cape), merchandise, unused
+- Ravenstern tartan hood - merchandise, used by low level Ravenstern soldiers
+- Ravenstern helmets with tartan hoods - 5 variants, merchandise, mostly unused (Dragons has one)
+- Empire helmets with crests - 9 variants (fit most of the plate armors), merchandise, some given to NPCs (mostly Empire lords)
+- added two top shields (stats the same as Kraken one) - merchandise
+- black version of Ironbred Charger - unused
+
+SCENES:
+
+- Valorshield Castle - fixed issue with AI pathfinding next to the castle gate during siege
+- Calendain Castle - fixed "back entrance"
+- Mistmire Castle - fixed spawn point
+- Rela Keep - inside - opened access to the stairs on the left (jump)
+- improved bo_interior_castle_c collision mesh (used e.g. in Rela Keep)
+- replaced "destructible doors" in the Old Ruins with their standard version
+
+OTHER:
+
+- typos
+- cleanup, removed unused resources
+- reviewed Credits
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+3.9.5.1 hotfix is compatible with 3.9.5 savegames 
+
+
+TRANSLATIONS:
+- added French version - Lolitablue, Trime1Predator, Daneel53
+- updated Chinese and Russian ones (mostly cheat menus)
+
+
+FIXED BUGS/ISSUES:
+- very small menus font on some PC configurations
+- order "prefer blunt weapon" can be canceled now
+- set female voice for Maltise and Verante Kruus when they are sent to death
+- player as elf and zombie (via Cheat Menu only) will use male voice to issue orders
+
+
+ITEMS:
+- Griffon Grandmaster Armor with Cape - added missing armpits armor 
+- improved/fixed meshes of: Falchion, Sword, Short Sword, Vanskerry Sword, Vanskerry Short War Sword, Iron Sword, Heavy Iron Sword, Iron Short Sword, Common_Iron_Sword, Shortened Military Scythe, Two Handed Sabre, Two Handed Heavy Sabre
+
+
+OTHER:
+- game menus with unique text received unique id (for translators)
+- typos

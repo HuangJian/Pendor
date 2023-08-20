@@ -1,0 +1,1402 @@
+﻿--------------------------------------------------------------
+POP 3.9.4 changelog (NEW GAME IS REQUIRED):
+
+
+Prophesy of Pendor v3.9.4 was tested with Mount and Blade Warband version 1.173.
+
+
+KNOWN ISSUES
+1. The "hold F1 flag" can't be used together with advanced formations (jkl keys; like shielsdwall), otherwise selected soldiers MAY start to move backward to the edge of the map. With "advanced formations" use mini-map, "hold this position" and "advance/fall back ten paces" to move groups around. POP's default (build-in Warband's) formations work fine.
+2. If during fight enemy stuck in inaccessible area (e.g. inside building structure) use CTRL+F4 (kill one enemy). It is not recognized as a cheat, there is no punishment, but overusing it will kill the fun pretty quickly.
+3. If the game become too slow, restart it. Due to Warband memory leak a play session will slow down over time (many reloads accelerate this process).
+4. Lords attack player during prisoners escape - restart current game session (Warband bug).
+5. "Cows in the water" - remove TexturesHD folder found in the main Warband folder. 
+6. NPC party stuck on river bank or shore - try right mouse click on it.
+7. Very rarely the new garrisons/prisoners hotkeys MAY produce unexplained errors due to improper usage by players (e.g. used "take all prisoners" hotkeys on the garrisoned soldiers). This feature is build on the top of inaccessible part of engine, so use it with care, accordingly to the provided instruction:
+- select troops/prisoner stack AND hold one of the keys combination listed below AND press give/hire/take/capture button
+-- capture all prisoners - LEFT CTRL + A 
+-- take all prisoners from garrison - LEFT CTRL + A
+-- give all prisoners to garrison - LEFT CTRL + D
+-- hire all soldiers - LEFT CTRL + S
+-- give all soldiers to garrison - RIGHT CTRL + ARROW LEFT
+-- take all soldiers from garrison - RIGHT CTRL + ARROW RIGHT
+-- move stack one position up inside garrison -  ARROW UP - (doesn't work if single soldier in the stack)
+-- move stack one position down inside garrison - ARROW DOWN - (doesn't work if single soldier in the stack)
+-- move stack to the top of garrison - PAGE UP - (doesn't work if single soldier in the stack)
+-- move stack to the bottom of garrison - PAGE DOWN - (doesn't work if single soldier in the stack)
+
+
+NOTES
+1. If you think that archery deals too much / not enough damage then open "module.ini" file located in the mod folder and find "missile_damage_speed_power = 1.2" . Reduce number (minimum 0.1) to make archery more deadly,  increase (maximum 2.0) to obtain opposite result.
+2. How to reduce chance for save corruption (apply to any Warband mod):
+- when you want to start the new game, restart Warband first
+- don't play with realistic saves
+- use all 9 save slots (note: if all 9 slots are occupied, the new game can't be started - delete one)
+- save in scenes e.g. tavern
+- if you want to save on the world map then stop to pause the game, count to 5 (so scripts running in the background have time to finish), press save
+
+
+BUGS/ISSUES
+- added missing penalty for siege retreat when player uses edge of the scene ("Leave area")
+- Village Elder quest "rescue daughter": 
+-- added check to make sure that targeted lord is not imprisoned at the moment when quest is given (as it may take him longer to escape and respawn than duration of the quest)
+-- on the rare occasions there was no dialog option to ask quest target lord for a prisoner  
+- quest "rescue prisoner" - initial +1 relation boost for accepting quest transferred to the reward as may be exploitable: accept quest -> relations +1 -> "can't do it" -> no relation loss -> immediately accept quest again -> ...
+- conversation with companion "I'd like to ask you something." - added "go back" dialog option
+- added missing hair styles (not new) for woman and custom_woman skins - no more bald Fierdswain and Falcons females; player may easier add new hairstyles (no coding required, just replace placeholders with desired meshes)      
+- added missing lods for native beard_j	
+- terrain near Almerra Castle is passable
+- fixed glitch: ask Arandur/Quigfen for troops -> see their offer -> press on NPC's portrait -> select any lord -> go back -> different offer, thousands soldiers   	
+- exploit: player is a king -> ask marshal to take fief -> marshal conquers fief and leaves part of siege army (e.g. KO knights) as garrison -> player has unrestricted access to the garrison of the unassigned fief (and takes mentioned free KO knights)
+-- player can't take (only give) troops to an unassigned fief
+-- if player assigns an unassigned fief to him/herself/husband all garrisoned units >31 will be disbanded   	
+- with horse archers AI enabled: if horse is killed, raider may stuck in attack animation; thanks to Vetrogor   
+- slider on the ally/enemy part of the troop ratio bar should be displayed properly (reverted changes) 
+
+
+GAMEPLAY
+- rune weapons:
+-- Large Pouch of Diamonds for mine location (was Qualis Gem)
+-- one Qualis Gem and one Gold Bar for "strange" item
+-- one Qualis Gem and Large Pouch of Diamonds for enhanced item (were 2 Qualis Gems)
+- garrison left by NPCs (only if they don't belong to the faction of which player is the king) in a just taken fief is configurable in CAMP -> POP OPTIONS; NOTE: the world balance was NOT tested with values different than DEFAULT
+- Eyegrim the Devourer - every 25 hours:
+-- if he is not with his army ("dead"), he will be summoned back
+-- he will convert 100% alive party members and 25% prisoners from each stack in to his undead roster (remaining alive prisoners will be kept for the next time); unit level:
+--- > 30 become Fallen Warrior						
+--- > 26-30 - Fallen Veteran
+--- > 15-25 - Fallen Footman						
+--- < 15 - Fallen
+- all bandits lairs - larger variety of enemy units will spawn (2 -> 5 types; e.g. chance that 15 Snake Cult Armsmen spawn at the same moment was greatly reduced); soldiers that have a chance to spawn (high tier ones have much less chance; leaders not listed):
+-- sea_raider_lair: Vanskerry Marauder, Vanskerry Raider, Vanskerry Warrior, Vanskerry Jarl
+-- forest_bandit_lair: Brigand, Heretic Minion, Heretic Worshiper, Heretic Magnus
+-- mountain_bandit_lair: Mystmountain Raider, Mystmountain Warrior, Mystmountain Shaman, Bearclaw Berserker
+-- snake_bandit_lair: Snake Cult Follower, Snake Cult Armsman, Cobra Warrior, Anaconda Knight
+-- steppe_bandit_lair: D'Shar Bandit, D'Shar Outlaw Chieftain, D'Shar Deathwind Savaran, Omen Seeker
+-- looter_lair: Robber, Bandit, Highwayman, Rogue Blackheart Knight
+-- treasure_lair: Red Brotherhood Thief, Red Brotherhood Guildsman, Outlaw Knight of the Boar, Rogue Blackheart Knight
+- changed skill "Tracking" to "Tracking and Hunting" - additional bonus: each 3 points reduce food consumption by 15%
+- added new quests:
+-- "The Old Tale (part 1)" - no time limit, no level limit, can be started by talking to a peculiar scholar
+-- optional "The Old Tale (part 2)" - no time limit, no level limit (will yield immense and useful rewards by the conclusion of everything)
+-- "Barding" - no time limit, no level limit, started by talking to a newly hired blacksmith (you will know)
+
+
+SCENES
+- fixed arena -> town passage (doors): Laria, Cez and Janos
+- added door to arena room: Senderfall and Valonbray
+- adjusted positions of spectators on all training grounds
+- fixed castle guards positions: Tuldar Fortress, Oregar Castle, Maras Castle (rebuild it a bit)
+- improved AI pathfinding in the forest bandit lair scene 
+- Order Stronghold - moved all NPCs closer to the entrance
+- Clovindarn village - changed to grassland type (thanks to UndeadDuke)
+
+
+TROOPS
+- Knight of the Radiant Cross: Black Greaves -> Heavy Iron Greaves (to match new armor)
+- Singalian Temptress and D'Shar Raider - Southern Glaive (can't be used by cavalry) -> Long Hafted Blade
+- Squire Gorgrim and Headman Orik (D'Shar village elders) received more culture fitting cloths 
+- Fallen Sickle -> Black Sword
+- Fallen Fighter Short Steel Sword -> Black Sword
+- Fallen Veteran
+-- ranged weapon set to not guaranteed
+-- guaranteed Fallen Horse
+-- Vanskerry Sword -> Black Sword
+- Fallen_Warrior
+-- ranged weapon set to not guaranteed 
+-- not guaranteed Fallen Horse
+-- Fierdsvain Leaf Sword -> Black Sword
+- Fallen Revenant added Black Sword
+- The Three Seers: rearranged order in which units appear on the battlefield (cavalry and medium archers protected by strong infantry, then the rest); buffed overall strength
+- faces of undead type soldiers are less extreme
+- Snakes Anaconda Knight, Devoured and Dread Legion Infantry received unique skin
+
+
+ITEMS
+- Runed Silver Axe - reduced a bit blade size, cleaned mesh, done proper lods
+- Vanskerry Noble Sword - cleaned mesh, new mesh for scabbard, retextured, done proper lods
+- Singalian Noble Sabre - cleaned mesh, retextured, done proper lods
+- Assassin Throwing Knives - redone mesh, retextured, done proper lods
+- Warhammer - cleaned mesh, retextured, done proper lods
+- Maul - redone mesh, retextured, done proper lods
+- Quarter Staff -  retextured
+- Darkwood Bow - redone mesh, retextured, done proper lods
+- Jatu Arrows and quiver - redone mesh, retextured, done proper lods
+- Imperial Radiant Cross Plate - new model and textures; versions with or without cap
+- Gold Rounded Bascinet - Open: changed gold to black (to match Radiant armor), renamed; added closed version  
+- Havathang - cleaned mesh and lods, fixed UV texturing, added scabbard 
+- Black Sword - old, rusty looking 1H sword, unique (can't be looted), swing only, 45 cut, 90 speed, 103 reach
+- Fallen Horse - undead horse, unique (can't be looted), armor 90, charge 40, maneuver 40, size 112, speed 36, HP 500, difficulty 10, value 200
+- New Quest Horse - unique
+
+
+OTHER
+- up to date Chinese translation thanks to: Tiberivs, Mario, S1 and Latis
+- changed pre_battle lords' pictures (POP used Warband's ones)
+- typos
+
+
+CREDITS
+Spak: zombi_horse_spak mesh and textures (slightly desaturated to match POP undeads)
+Full Invasion team: horse6 mesh and textures (slightly recolored to match POP plate armors)
+
+
+--------------------------------------------------------------
+POP 3.9.3 changelog:
+
+BUGS/ISSUES
+1. Player starts siege -> enemy sally out -> player defeated -> can't exit scene
+2. On very rare occasions it was possible to take and instantly complete army guests (bring cattle, scout waypoints) by speaking with own and foreign marshals
+3. Kings of defeated factions and unwanted lords changed their names to the date when they left the game
+4. Fixed skills of Velasco Perfecta Banderas Durante
+5. One of the Vorador's rumors
+6. Alexios will improve crossbows and gun
+7. The troop ratio bar with "show reserve forces" option should be displayed properly during fights in various bandits lairs 
+8. Added check to make sure that player have some free space before receives one of the kings' weapons (before one of the items was replaced)
+9. Secured rare case when CKO item upgrade time equals 0
+10. Overlapping sounds during Farmers encounter
+11. Added extra check for "in battle press TAB to be automatically captured" situation
+12. Player CKO female knights won't switch gender back to male after establishing any KO/CKO
+13. Typos
+
+
+GAMEPLAY
+1. Successful rescue prisoner quest will raise relations between player and towns owned by imprisoned hero. Before was the last visited town
+2. Qualis heroes may use advanced AI on the battlefield (like e.g. lords)
+3. Nervous Man, Hired Assassin, Belligerent Drunk stats are constant (comparable to lesser knight, Scorpion, zombie). Increased their levels (40, 50, 40) and rewards for beating (only in tavern). Chance of Belligerent Drunk getting better equipment will scale with player level (Drunk, Guard, Mercenary, Adventurer), e.g. it is possible to meet Adventurer at level 1, but chance is only 2%
+4. Items scores (used for auto companions equip and looting): fixed two conditions, adjusted values to remove discrepancies (e.g. Saddle Horse was 2x more "expensive" than Immortal Armor)
+5. "Renegade knights" (e.g. Red Fletcher Hunting Party, House of Morgan Renegades, Deathwind Renegades, Outlaw Snow Lion Knights, Ebony Knights Hunting Cadre, Red Brotherhood Elven Slave Caravan):
+- groups, which are connected to the main kingdoms, won't spawn if given kingdoms no longer exist, but will be replaced by more generic regional warriors,
+- number of soldiers will scale with player level (capped at level 40) ranges from 17 to 86 (was random 1 to 29) - testing
+6. Attacking enemy caravans during war is no longer recognized as dishonorable
+7. Villages: 
+- demanding cows and supplies from enemies is no longer recognized as dishonorable
+- decreased honor loss for razing -3 -> -1
+- decreased honor loss for stealing cows and taking supplies from friends -5 -> -3 
+- increased relations drop between player and village owner -5 -> -10
+8.Tournament in Valonbray bows -> xbows 
+9. Missile speed (range) for all ranged weapons will be displayed
+10. Mines of Aziz: the blacksmith asks for additional gold bar, the "monk" for extra Qualis Gem
+11. Guards in player (faction) fiefs will change according to selected culture
+
+
+TROOPS
+1. Barclay Arquebusier (former Janissary) got promoted - ranged killing potential equal to Mettenheim Heavy Crossbow; upgradeable from Barclay Balestra
+2. Donavan's firearms proficiency 200->250
+3. Kapitan Gerhart melee proficiency 550->500, crossbow 100->500
+4. Melitine Griwbanar lv 40 -> 45, Long Hafted Knobbed Mace -> Melitine Sabre
+
+
+ITEMS
+1. Musket - it is possible to reload while moving. Note: killing potential Janissaries = Empire Armored Crossbowmen, 5% better then siege xbow + siege bolts. 
+2. Light Plate Armor changed modifiers cloth -> armor
+3. Snake Priestess full outfit
+4. Viper Sabre snake skin matches color of other Snakes' equipment
+5. Added new Snake Gauntlets (used by Anacondas, unlocked for CKO by Heynrich)
+6. Griffon on shield and armor faces other direction (in line with emblem on knighthood horses)
+7. Phoenix Knight Barbutte should better fit female models.
+8. Put your trusted rune armor on and go to speak with Clarissa of Pent
+
+
+SCENES/MAP
+1. Added optional folder with snow, steppe and plains terrain textures made by Saxondragon 
+2. Sieges (pathfinding, barriers, optimization etc.): Taloncrag Castle, Maras Castle, Talon Castle, Valonbray, Falcondark Castle, Almerra Castle, Elacrai
+3. Fixed river bank near Shadi Shahid where parties could stuck
+4. Warband collision mesh for gate_house_b (windows smaller then they look)
+5. Walven Castle - secured area between two pillars, which might act as a invisible wall or portal
+6. Optimized towns icons by removing hidden or hard to notice features (-10% less complicated models)
+7. Redone all NPCs map icons (player, bandits, Noldor etc.) - they use actual POP items (only few made up) 
+
+
+OTHER:
+1. Reduced pauses on the both ends of neutral_infiltration.ogg track 
+2. std_banners_e - replaced the middle banner in the last row with the griffon banner (like on Griffons Order equipment) - for RPG as may be used for resurrected Kingdom of Pendor
+3. Renamed "Order of the Kraken Cultists" to "Kraken Cultists" for consistency (e.g. to avoid issues in dynamically created text).
+4. Removed unused simple trigger checked once a day
+
+
+
+
+
+--------------------------------------------------------------
+POP 3.9.2 changelog:
+
+NOTES/KNOWN ISSUES
+1. The "hold F1 flag" can't be used together with advanced formations (jkl; like shielsdwall), otherwise selected soldiers MAY start to move backward to the edge of the map. With "advanced formations" use mini-map, "hold this position" and "advance/fall back ten paces" to move groups around. POP's default (build-in Warband's) formations work fine.
+2. The new garrisons/prisoners hotkeys - on very very rare occasions, due to improper usage by players (e.g. tries to move stacks that consist 1 soldier), may produce unexplained errors. It have never happened in my or betatesters games, but 2 players somehow managed to break it. It may be due to old game engine.
+
+
+ISSUES/BUGS
+1. NPCs' Custom Minor Orders
+- expanded safety checks for armor pieces
+- knights will be properly divided into infantry, archers and cavalry during order creation
+2. Player's Custom Knighthood Order
+-  accessing page or changing the order/knight/sergeant name won't reset knight's gender to male
+- on rare occasions minimum upgrade cost (1k) and time (1 day) wasn't applied
+3. DIALOGS
+- on rare occasions traveler asked for rumor and wanted to talk about hidden treasures, might replay in a not usual way
+- rare random window's title when player use TAB during combat
+- the option to increase morale at the tavern doesn't takes prisoners into account
+- pretenders acting as kings won't offer to join player's faction
+- player talks with Red Brotherhood's ransom broker -> he/she has troops to offer ->  he/she describes offer -> player access reports (by keys shortcuts or by clicking NPC picture) -> player switches between all tabs then return to the dialog window -> no options to choose from, no way to leave window except ALT+F4  
+4. SCENES
+- passage hall -> courtyard in: Taloncrag Castle, Evasolde castle 
+- Haringoth Castle siege AI
+- Silveredge Keep wooden ramp between roof and tower
+- Uhnun enemy's spawn point
+- Singal added siege's chest
+- cleaned "a bit" Elacrai siege scene
+- Ravenstern ladder
+5. ITEMS
+- Jatu Mask Helm head clipping
+6. QUESTS/MISSIONS
+- player sent companion for a RTR mission -> companion returns -> player has "rewards troops" in the party already -> "rewards troops" won't be added
+- improved interaction between Kaverra and Vanskerries
+7. MENUS
+- Stag Armour not showing in one of the POP's achievements - replaced with Fierdsvain Noble Surcoat
+8. SIEGES
+- when enemy decides to "sally out", all player's long ranged units will receive only up to 5 projectiles; before some items were omitted
+- exploit: player besiege fief -> player's archers has no ammo left -> player falls in purpose to avoid standard retreat penalties -> player's archers replenish ammo -> player restarts siege -> ...
+- after successful siege caravans, faction KO patrols and village patrols were not transferred to the player faction
+- added Elacrai to the killcount exception list
+9. BATTLES
+- if "Horse Archers AI" is enabled to all and during the battle player gives order "follow me" or "hold position", horse archers won't move towards the map's edge
+- corrected pop_standguard_long animation
+10. SOUND
+- fixed rgl_log Sword_clash_26.flac, Sword_clash_27.flac, fl_pistol.WAV warnings / not playing on Linux systems (case sensitive)
+
+
+GAMEPLAY
+1. MENUS
+- removed Sheriff's tree from the Others page
+- player can specify titles of his/her noble vassals, both men and women 
+- info about NPC's wealth, soldier fit and ideal army size won't be displayed for player and kingdoms ladies
+- added "Fix POP" camp menu (cheats needs to be enabled):  "Fix '0 morale food' & 'negative enterprise income' & 'no CKO items'"
+- added confirmation to the pre-battle "Surrender" option 
+2. DIALOGS
+- Village Elder may sell up to 9 cows in one transaction 
+- added option (with confirmation) to release all Noldor prisoners from player's party
+3. Reduced chance (as compared to the 3.9.1 patch) to loot Gold Bar, Noldor Trade Goods and Various Loot (party looting skill 0-14 -> probability 2.7-15.2%, max 1 of each could be added)
+4. NPC
+- enabled "firearms" proficiency; both elixirs will raise it
+- Donavan - increased "firearms" proficiency
+- Quartermaster Kailin may have in stock two new items
+- removed unnecessary items from stewards inventories
+5. HERO NPCs (e.g. mercenary captains)
+- will be spawned with full health 
+- Kadan Bahadur Khan won't hire Sheik Shalavan as mercenary
+- news that Inquisition armies arrived has different colour (green -> light gold)
+- swapped map icons between Eyegrim and his patrols
+6. QUESTS
+- knighthood order:
+-- Valkyries and Krakens - changed primary bounty enemies from "party template sea_raiders" to "faction vanskerry" in order to account raiding armies towards progress
+-- if player is doing the order challenge quest, then rewards troops from companions' RTR missions won't join current (knights & sergeants) player's party straightaway (they will be added to the main forces).  
+-- the bounty quest - "bounty points" given after each battle are proportional to the player contribution (party strength); bringing low number or/and quality units to aid strong friends in a fight will yield very few "bounty points" (minimum 1)
+- rewards of the guildmaster's track down bandits quest are proportional to the player contribution (party strength) in the final battle (when targeted enemy is defeated; minimum 100 gold and 100 xp)
+- "offer protection to Caravan Master" - increased gold and xp reward (min-max 5-1160 -> 60-2480) to be more in line with similar quest given by Guildmaster
+7. Noldor gets similar bonus if player initiate or join fight against them and autoresolve
+8. Character creation, "former knight" background - added the post 3.611 orders to the possible -5 starting relations with player
+9. Infantry's idle stances should look a bit more natural
+10. OTHER
+- put additional safety layer to the pay day routine
+11. TOWNS' CHESTS
+- Windholm: Unicorn Plate and Dragonspine Axe -> Kraken Shield and Trident
+- there is a high chance (80%-85%) that items in chests will get random positive modifiers (when the new game is initialized):
+metal armor pieces
+20 plain			
+20 superb		
+30 thick	
+20 reinforced
+10 lordly	
+				
+leather armor pieces
+20 plain			
+20 superb		
+20 sturdy
+20 thick	
+20 hardened
+				
+shield	
+15 plain
+55 thick		
+30 reinforced	
+				
+ammo
+50 plain
+50 large_bag
+				
+musket/crossbow
+15 plain
+75 fine			
+10 masterwork
+
+bow
+15 plain
+35 fine
+40 strong				
+10 masterwork
+				
+thrown
+15 plain
+40 balanced	
+35 large_bag
+				
+polearm	"masterwork"	
+15 plain
+65 heavy			
+20 masterwork
+				
+polearm	"balanced"	
+15 plain
+55 fine						
+30 balanced
+				
+axe	
+15 plain				
+65 balanced / heavy							
+20 masterwork
+
+1h/2h "lesser"
+15 plain
+45 fine			
+40 heavy				
+						
+quality sword
+15 plain
+15 fine
+15 exquisite				
+20 balanced
+15 tempered
+20 masterwork
+					
+sword	
+15 plain
+35 fine		
+25 balanced
+25 tempered
+						
+horse	
+20 plain
+20 stubborn						
+50 heavy		
+5 spirited
+5 champion / spirited		
+
+
+TROOPS
+1. Barclay:
+- renamed all units to follow original creators' design,
+- ranged unit:
+-- replaced Siege Crossbow with musket
+-- replaced both Great Helms (closed) with  Steel Helms with Feathers (open)
+2. Empire Crossbowman one Heavy Board Shield -> Board Shield
+3. Veccavi Bloodsworn Guard and Knight Ornate Leather Boots -> Silver & Gold Greaves
+4. Seeress get guaranteed "helmet"
+
+
+ITEMS
+1. HELMETS
+- optimized and retextured: Phoenix Barbutte, Phoenix Knight Barbutte (added optional models with smaller plumage - doesn't restrict archers vision too much), both Adventurers Helmets
+- 8 helmets which uses "rhodok_helmets" material (e.g. Barclay Great Helmet): reduced "bumpiness", metal matches better other commonly used iron armours
+- Immortals received more unique helmet design
+- added two Veccavian helmets
+- added unique Seeress "helmet"
+2. ARMORS
+- new one for Veccavi Knight (called Veccavian Plate) 
+- current Veccavian Plate renamed to the Witch Armor
+- minor corrections to the female versions of Stag/Unicorn/Falcon Plate
+- recoloured Immortal and Mortal armors, Mortal shield  
+- redone both armors used by Barclay men
+- changed colour of the Serpent Breastplate over Chainmail to be in line with other Snake equipment
+3. WEAPONS
+- fixed Empire Great Sword's tip
+- added "musket" (base on arquebus) and bullets (in a small bag), corresponding fire/reload/stance animations, way to unlock for CKO; one of the NPCs received one; bag of bullets is hidden somewhere
+
+
+ITEMS STATS
+- Supreme Asp Helm body armour 0->2 value 9500->10000
+- Asp Helm body armour 0->1
+- changed modifiers of cloth/leather outfits to the more appropriate ones 
+
+
+CREDITS
+- Caba`drin "Custom Player Kingdom Vassal Titles" (adapted for POP)
+- Llew "Flintlock Firearms OSP" (Arquebus mesh simplified for POP)
+- Psiphoon "musket reload animation" (shortened for POP)
+
+
+
+
+
+--------------------------------------------------------------
+POP 3.9.1 changelog:
+
+"FIXED BUGS/ISSUES"
+1. QUESTS
+- "Capture enemy hero" - quest rewards were properly given to the player (shown in on-screen log), but amount of gold was always displayed as "0"
+- "Band of Looters" from guildmaster quest are set as neutral to all (so only player can kill them)
+- "Raise troops" - Warband bug - money reward was always 1 denar due to wrong syntax "(val_mul, ":quest_gold_reward", ":quest_gold_reward", 7),"
+- "Train peasants against bandits" - gained renown was taken from the last battle; now it is calculated properly (3-22 for level 1-62)
+- "Village infested by bandits" - gained renown was random 1-10; as now quest is harder renown is increased as well (5-27 for level 1-62)
+- troops in Jatu Mercenary Heartbeat quest
+2. MENUS/OPTIONS
+- if player kill horse on the battlefield, option "Display a message on player kill" doesn't report that rider was killed
+- upkeep in the "weekly budget report" and in party menu should be the same
+- if player initiated the battle AI will be able to rescue/capture prisoners
+3. TEXT:
+- fixed and updated latest Chinese translation
+- corrected more spelling mistakes
+4. DIALOGS/MESSAGES
+- become king -> crown received -> pledge to another king -> become lord -> rebel and start own faction again -> no coronation as crown given already -> player stuck as "Rogue Leader"
+- tavern talk with Travelers when player selected some special combination of answers during character creation
+- Clarissa of Pent "Maybe next time." option   
+- player will pay the same sum for "I wish to make peace with the ..." when speaking with kings and lords
+- female character can't change outfit/hat of her husband
+- dialog when the arbalest is given to the player
+- lord paying "0 denars" during "exchange fiefs" operation
+- "your armor is ready" message from Alexios (now "... item ...")
+- question in the Boadice's intro
+5. SCENES
+- removed few "invalid items" from on-street merchants shops in towns
+- Talon Castle sneak in (guards spawn inside walls)
+- prison door in Dagon Castle and Castle Alden
+- error opcode messages during Snake Stronghold siege; (never seen this error in my games and wasn't able to recreate it, but it may be fixed)
+- Tuldar Foltress siege scene
+- Ironworks (floating helmet)
+- Nal Tar left ladder should be used more during siege
+- Fletcher battle scene - attacking soldiers may stack on a rock placed next to the spawn point
+- adjusted slightly ladders-walls regions in all three Empire towns
+- added inventory box to Singal siege scene
+6. Some lords with poor income (no fiefs) were unable to hire enough soldiers to leave walled fief
+7. Script "Horse Archers AI":
+- should work a tiny bit faster
+- horse archers ordered to use blunt weapon should work better
+- changed "pos.." as some was used by AI scripts to store values
+8. Script "Lancer AI"
+- added code to cover all soldiers on foot so they won't use lances (Tournament, Blunt Tip, Double Sided, Light, Heavy, Great, various Long Knights, various Long Cavalry, Jatu Honor, Melitine, Melitine Impaler, Banner of Sarleon) band Black Iron Spear
+- it cover field battles, fief sieges/missions, villages fights/raids, lairs fights
+- changed "pos.." as some was used by AI scripts to store values
+9. Issue with looting of gold bar, noldor goods, various loot - if fallen soldier had special goods and lots of other items in the inventory then: they were impossible to loot or, due to low "score" of these special goods, they were replaced by arguably better items. Changes:
+- special goods have higher "score",
+- after fight calculate "the max number of special goods possibly remaining on the battlefield" (e.g. player beaten 10 Ravenstern Rogue Knights -> max 10x3 Gold Bars + max 10x1 chests of Various Loot); if:
+-- given special goods appear in the final loot, then proceed as normal
+-- given special goods don't appear in the final loot, but enemy soldiers carried them, then: take party looting skill and calculate ONE BY ONE, SEPARATELY (from previous example 30 times for Gold Bars, 10 for Various Loot) the chance of the each special goods to be added to the final loot (skill 0-14 -> chance 1%-15%, max 2 pieces each)
+10. Exploit:
+- player wants to join siege defenders -> presses e.g. "inventory key" on "Join the battle." menu -> enemies is forced to retreat
+- player as mercenary fight against own employer -> relations drops <0 -> player can siege employer's fiefs -> siege successful, no garrison, +X renown -> can't own fiefs as mercenary -> siege empty fief -> siege successful, +X renown -> can't own fiefs as mercenary -> ...
+- player become lord of faction_1 -> player relations align with faction_1 -> player can decrease relations with faction_2 independently from "faction_1 vs. faction_2" relations -> no war between faction_1 and faction_2, but player can happily siege faction_2 fiefs, against the will of his/her own king -> as no war between faction_1 and faction_2, faction_2 doesn't try to take lost fiefs back -> player can take fiefs of a faction_2 one by one as no counteroffensive is present (as no official war was declared); it might be possible to start war between two friendly kingdoms which AI doesn't "want" (without reason, quest etc.); now it is similar to options which player acting as a king has - no official war declared, no right to siege 
+
+
+"GAMEPLAY"
+1. *** CHARACTER CREATION
+- nobfemale1
+-- persuasion 4->2
+-- tactic 0->1
+-- power draw 0->1
+- barclay2
+-- persuasion 3->2
+-- trainer 0->1
+- bard3
+-- persuasion 3->2
+-- pathfinding 1->2
+2. Fee for selling diamonds 5%->2.5%
+3. KINGS/LORDS
+- kings (were only lords so far) will use KO troops from owned walled fiefs
+- kings won't exchange their original capitals with player
+- if NPC wants to leave walled fief, she/he must have army at least 60 strong (was 70)
+- added more info about lords to the Characters reparts (how many fit soldiers given lord has, what is his ideal army size)
+4. HEROES
+- leaders of mercenary parties hired by kings (including player) will appear with full health
+- mortal Heater Shield won't be unlockable (for CKO) by Burilgi as Syla already doing that
+5. One extra crown will be received during coronation:
+- male player can ask his wife to put it on via "Could you reconsider your outfit?" dialog (keep item in your "Household Possessions")
+- female player can give it to her husband during standard chit-chat (keep item with you)
+6. Female player will pay 50% of garrisons upkeep (which is 25% wage "when in party") in fiefs which belongs to her husband; as a result these fiefs will pay 25% less for garrisons and accumulated wealth will end up in husband's pocket (will have more money to recruit soldiers to the field army or pay upkeep) 
+7. Qualis Heroes and enemies to the player (relation<0) commanding own armies during the battles
+8. The "size of the garrison hired after enemy AI successfully sieged fief" is controlled by "Campaign AI Difficulty" - less capable players can adjust campaign difficulty to better match their skills; number of chances to recruit reinforcements (possibly more units; +50% for towns) --- number of upgrade runs (better quality units; +100% for towns):
+-- "Easy": 4---2
+-- "Medium": 8---3
+-- "Hard": 12---5 (no changes, default 3.9 values).
+-- player's faction when she/he act as mercenary or lord will have always 12---5 (no changes, default 3.9 values).
+-- player's faction when she/he act as king will have always 2---0 (no changes, default 3.9 values).
+9. Added more troops trees to the Reports section.
+10. Increased the daily spawning chance of free knights and sergeants in player's fiefs. As a result player should get 250% more knights (but don't be too excited because of this number) and 13% more sergeants.
+11. The minor knighthood orders (*** existing ones will stay as the are, but the new ones should follow below rules):
+- reviewed equipment which should better match knighthood name,
+- foot knights won't get "lances"
+- no more pitchfork, staff, practice bow, scythe, very low damage melee weapons
+- knights won't wear dresses.
+
+
+"TROOPS/FACTIONS"
+1.  *** Inquisition set as "enemy" to: Windriders (-30), Scorpion Assassins (-20) and Noldor (-10)
+2.  *** Intelligence and charisma of CKO knights and sergeants in line with standard KOs
+3.  *** NPC
+- Qingit Bey riding 5->7
+- pretenders mounts received modifiers
+- Malik Cuiur -> Lord Seneschal Hakon
+4.  *** Mercenary Highlander level 20->30, str 15->23 agi 12->16 int 9->10 cha 6->15, prof melee 190->220 bow 100->220, not guaranteed Short Composite Bow + Bodkin Arrows
+
+
+"ITEMS"
+- Lamellar Armor - fixed forearm area, will match new gloves
+- Viper Sabre Scabbard will shown when drawn
+- Mettenheim Bolts Quiver will deplete
+- Pitch Fork added 8 blunt swing damage as swing animations were set
+- Black Iron Spear removed info from item description about swing damage
+- Dragonspine Axe - removed info about unused thrust damage
+- swapped models between Melitine Horseman Bow and Melitine Army Bow; Melitine Horseman Bow - holster will be displayer when drawn
+
+
+"ITEMS STATS"
+1. 2H
+- Runed Silver Axe value 903->2903
+2. Ranged
+- Light Crossbow diff 10->9
+3. Shields
+- Gold/Red Magnus Shield diff 6->5
+4. Horses
+- Jatu Warbeast diff 5->6
+- Noldor Spirit Horse diff 6->7
+- Desert War Horse diff 4->6
+5. Thrown
+- Throwing Knives weight 3.5->2.5
+- Throwing Daggers weight 3.5->3
+- Darts weight 5->2.5
+- War Darts weight 5->3.5
+
+
+
+
+
+--------------------------------------------------------------
+POP 3.9 changelog:
+
+"FIXED BUGS/ISSUES"
+1. CUSTOM KNIGHTHOOD ORDER
+- equipment upgrade discount (-90% to both time and money); added two safety checks for negative time (min 1 day) and cost (min 1000 gold)
+- all available items will appear on the CKO upgrade lists
+- black screen after CKO upgrade (press the "leave" key)
+- added warning when player tries to join CKO
+2. KNIGHTHOOD ORDERS
+- "bounty quests"
+-- only KO's enemies accounted towards it
+-- added missing "insults"
+- quest to "win a tournament" will fail ONLY if both conditions are true: "no more days left" AND "tournament in the quest city is on"; otherwise it will be canceled, in which case cool down time is reduced 7days->1day
+- minor custom KOs soldiers should wear less "extravagant" outfits
+- exploit: for orders, especially "free" ones (e.g. Griffons from "the letter" option) it was possible to progress in their hierarchy by simply creating (add x rank points) and dismantling (subtract 0 rank points) chapters
+3. NOLDOR 
+- "defense bonus" (x2), when player auto resolve battle against them
+- trade Qualis for Noldor troops when party is full (the gem disappears and Noldors were lost)
+- modifier "tempered" not assigned to sword received as a reward in the Noldor tournament
+- training grounds - max number of opponents is 4 (for high player level)
+4. UNIQUE HEROES/CAPTAINS
+- will not be enlisted by kings as mercenaries if: given hero executed by player or asked for items before or already on the map or imprisoned by player
+- accept items from captured unique spawn heroes when inventory is full
+- Maltise cannot be moved to the castle prison
+- Dread Legion will not spawn, if Maltise executed by player or asked for unique items
+- script error, when player (as a king) dismissed own mercenary company
+- hired mercenary captains should follow player more willingly (order "Follow me")
+- faction of captain must follow faction of his party - fixed for Jarryn_Maersow (Commoners->Adventurer Companies), Burilgi the Usurper (D'Shar_Raiders->Singalians), Sheik Shalavan (Singalians->Rogue Knights), Syla Uzas (Adventurer Companies->Rogue Knights)
+5. COMPANIONS
+- player couldn't persuade lord-companions, who left his/her faction, to rejoin (fixed thanks to Leonion)
+- companion set to "stay away from fight", then promoted to minister, able to clone himself (is in the castle and party)
+- "king support opponent speeches" for Donavan, Sara and Sir Alistair
+- companions returning from missions (e.g. gather support) will be able to rejoin player army even if party reached max size
+- exploit: it was possible to access Lethaldiran equipment by players with level <30, by talking to him after won battle (on the "Let your heroes select gear from the item pool." screen)
+- when Julia joins the nobles, she gets title "Tribune" instead of e.g. "Lady" - now in line with here "nobility acceptance speech"
+6. WORLD MAP
+- lord by himself or with very small warband was able to sally out walled fief to engage low threat enemy bands; then such a lord was patrolling surrounding area
+- player leads allies to break the siege, but after winning all allied lords and their armies end up in player party (listed only on the world map)
+- ladies-in-waiting will spawn as prisoners only if their kingdom is active (alive); rescued ladies of fallen kingdoms will have only option to enlist them
+- it was possible to capture undead, if player defeated "routing warriors" of Snake or Heretics warbands
+- spawn chance for "Ebony Gauntlet Prisoner Train"
+- "Modify Banner" - player will swap his banner with the lord's one (lords won't end up with the same default banner (sun and red cross on yellow field); side effect - by swapping banners it is possible to unify player kingdom color/heraldry (e.g. black flags for newly re-established Pendor kingdom)    
+7. BATTLEFIELD
+- claimants don't change their starting outfits between civilian (for interiors) and battle ready (for exteriors)
+- Tab behavior in combat: player fell -> taken as prisoner -> escaped -> TAB in the next fight = fight automatically lost
+- Retreat (F1->F5) battlefield option
+- after issuing order: "use only blunt weapon", units without such items will use the first melee weapon from their inventory instead of fists; see note about cavalry in the "Known Issues/Notes" section
+- after won battle the "loot screen" appears before the "prisoners screen" (exploit: make an army full of expendable troops, win battle (including auto resolve), release all your troops, all loot for player only, profitsss)
+- opcode error during siege, when player ask the nearest soldier from player party to share ammo (by pressing "o") 
+8. AL-AZIZ
+- drunkman "wine problem"
+- gem weapon not received when player inventory is full
+9. QUESTS/MISSIONS
+- player does not take "track down bandits" quest, in the meantime quest's bandits are killed -> player speak with guildsman -> script error
+- tutorial merchant quest - corrected number of required soldiers
+- tutorial merchant quest - during the "hideout part" common lair leaders will spawn instead of heroes (reduced hp was shared amongst all of them)
+- during "free lord form prison" quest player has the same items inside and outside
+- player replaced minister -> latest quests given by minister were aborted (penalties), even if were successfully completed
+- after successful "pretender quest" relation with pretender faction was set to 0 and as a result no lords helped player in the battles (even if player acts as a marshal); now it is set to 60
+- "deal with looters" - spawned quest looters were killed by AI parties; now they are neutral to all other groups on the map and only player can hunt them down
+- exploit: in all bandits’ hideouts, part of the loot came from the last player battle (as a result e.g. high quality Noldor items in a D'Shar bandits lair)
+- during "sneak-in" or "rescue prisoner" missions kingdom "tier 3" soldiers were spawned instead of "tier 2"; rebalanced kingdoms' "tier 1 - tier 5" units (e.g. D'Shar was way too strong) 
+- Guildmaster's quest "Retaliate for border incident" had only "fail" condition, was unable to be completed 
+- when group of lords is in the same room (e.g. during fest) more than one can share rumors with player 
+- The Ghost Lady:
+-- disappearing Mistress during the quest
+-- Mistress doesn't "follow" player in castles/towns during the quest
+-- no more "Surrender or die. Make your choice." dialog
+10. CORRECTED LEONION'S TWEAKS
+- 20.2 and 32 - Marius Imperator should not act as a lord of defeated faction, Lord Leonius should
+- 38 relation gain with friendly lords after large battles or sieges automatic:
+-- companions, who don't act as lords, won't receive relations boost with player after battles or sieges
+-- if first lord in the combined armies has relations with player <-5, relation was boosted to 100
+-- relations with lords who doesn't like player were boosted as well
+- 28 fief exchange:
+-- player can't handle own court (could end up as a fief-less king/queen)
+-- as king/queen: exchanging fief is not treated in the same way as distributing a new fief (where relation increases/decreases with all lords)
+-- as king/queen: for those vassals that only have villages, the option to exchange fiefs was only there if player had a spare village him/herself (no matter how many spare castles or towns player had - option wasn't there)
+-- as a vassal: for those lords that only had villages, the option to exchange fiefs was only there if player had a spare village yourself
+-- exploit of exchanging plain fief for one with KO; player will be compensated extra up to 10k for offering fief with any KO; lord will get more money for fief with chapter (120k for Qualis KO, 60k for one of 5 factional ones, 40k for the rest)
+-- exploit: if player carefully chose his lords (only good-natured, upstanding and martial ones, and they are not enemies of each other), by exchanging two similar fiefs back and forth, he/she get +10 relation with one lord each time, for a bit of money
+- feasts relations modifications (fixed thanks to Leonion)
+- some NPC (Iris, Trainer etc.) treated as sergeants by minor KOs crated by lords (fixed thanks to Leonion)
+11. Reduced a bit chance to corrupt save games during save operation on the world map by decreasing frequency of less essential background calculations:
+- achievements checked 1hr->24hr
+- Leonion's tweak 32 (forcing lords to leave dead factions) checked 1hr-> 2days
+- Leonion's tweak 29 - reduced on screen spam messages and removed one trigger checked every 12hr by moving this feature to the Tavernkeepers
+12. CORONATION GIFTS
+- no spaces in inventory and coronation gifts were lost
+- exploit: player can only receive one crown helmet
+13. SOUND
+- arena sound would cut abruptly shortly after the beginning of a tournament round (added delay)
+- the arena/tavern infinite sound loop
+14. SCENES
+- fixed passage between Avendor's Arena -> City Center and City Center -> Arena 
+- fixed passage between Sher Quila's Prison -> City Center and City Center -> Prison
+- Sher Quila was marked as a "tower siege"
+- Seven Cross Keep spawn point (lord rescue mission)
+- removed walls from Gunders Lodge interior as some NPCs could spawn behind them
+- Snake Stronghold:
+-- removed chest from the initial scene (wooden interior)
+-- improved AI pathfinding
+- fixed some rare NPC barefoot
+- fixed the body of arena fighters
+- cloned wife/spouse
+- open the cells doors in prison scene as players were unable to reach NPCs in: Marleons, Ansen Lodge, Shadi Shahid, Talon Castle, Valorshield Castle and High Pass Fortress
+- left hand side balcony is accessible in (lords sometimes spawn there): Torbah and Nal Tar
+- shadow under the main table in Stoutheart Castle
+15. MENUS
+- Troops Trees in Reports: removed duplicate troops and cover situation when troops have more than 24 items (error messages before)
+- fixed transparent items in the "achievement" or "order established" screens
+- corrected "few" spelling mistakes
+- when negotiating a peace with enemy king and declining the proposal, the two factions make peace anyway,
+- when negotiating a peace with enemy king and accepting the proposal, the two factions make peace, but the next screen shows pre-battle options
+- short initial description for village prosperity level 9 (during visiting location)
+- removed minimaps from two textures used in menus (Rane and loot images should load a bit faster)
+- added warning to the dialog line, by selecting which player with renown >1000, disables fights with Belligerent Drunk 
+16. CUSTOM FONT
+- fixed font kerning for potential localizations 
+- corrected height of all characters with accents
+- is optional (players can enable it themselves) as too many confused Mac, Linux and non-English players
+17. TROOPS
+- fixed low autocalc attack value of: Possessed Doomguide, Fallen Melitine Noble, Heretic Invoker
+- assigned correct skin for D'Shar rogues (Young Adv., Squires, Knights)
+18. "Advanced Formations bug":
+- description: sometimes group (like infantry) in AF (ranks, shield wall, wedge) will move back to the edge of the map or may not response to the player's orders; it is often happening when player use mini map or "hold F1 flag" to position groups, which are in AF; F1-F1 order works fine, but selected group will move or form new shape on player position (not very convenient)
+- applied solution: player's army will use Warbands formations as default; it is up to player, if he/she want to use AF or not (by pressing j, k or l and using F1-F1); lords will use AF as they used to do (if "Enable Formations" are ticked in "POP OPTIONS")
+- new battle plan - hopefully no (or at least much less) f1f1f1f2f2f3f4... clicks on the beginning of each field battle:
+-- infantry (group1) - move 25m forward, stand_closer, stand_closer (3 rows),
+-- archers (group2) - move 10m forward, stand_closer,
+-- cavalry (group3) - move 40m left, a bit behind, stand_closer, stand_closer, mount_horses
+-- the rest (group4-9) - move 40m right, stand_closer.
+- foot soldiers move forward to make room for cavalry - faster positioning (and only 2-3 dismounted soldiers out of 60)
+- group4-9 is on the left as horse archers are in this group and they fire to the left
+19. very expensive items in Quigfen's and Calanon's shops shouldn't disappear; both shops should restock a bit more quickly
+20. OTHER
+- fief's mineral bonus implemented as was originally planned; as a result chance to get 300 increased from 5% to 11%
+- UllrVetr Manifest exploit
+- corrected strength headers (from str_34 to str_120) so decimal value match hexadecimal
+
+
+"GAMEPLAY"
+1. Reloading game doesn't change outcomes of some events, e.g. asking travelers for treasure chests like the Red Brotherhood one, chance of capture the Qualis Gem heroes, rewards in Noldor tournament. If after few reloads result is the same, accept it and move one (as in some cases even "failure" may influence player's next move). Spend more time in the actual game, not in the load menu. Remember: defeat/failure doesn't always mean "the end" - it may be just the beginning of a tale, which you share with your grandchildren when the time comes :)
+2. CHARACTER CREATION
+- options to start without banner ("your father was ..."): merchant ship captain, retired adventurer, wandering nomad clan leader, rough and mysterious figure
+- increased starting relations penalties with the major kingdoms -5 -> -10 (depends on chooses)
+- if "your father was a wandering nomad clan leader" then Inquisition -10 
+- redistributed few skills points assigned during character creation - max skill level capped at 7:
+-- stage1 - misterious1 - looting 4->3, tracking 0->1
+-- stage2 - succmarch2 - trade 2->1, athletics 0->1
+-- stage2 - fend2 - looting 3->2, ironflesh 0->1
+-- stage3 - engineer3 - engineer 4->3, athletics 0->1
+-- stage4c - selfmarch4c - trade 2->1, prisoner management 0->1
+-- stage4d - selfmarch4d - trade 1->0, tactics 0->1
+3. Kingdoms strengths have been rebalanced and tested - games should be more random as major factions are more equal 
+4. FIEFS
+- compensation for not being awarded a conquered fief 900->2500 denars
+- income +25% upgrade time -33%, upgrade cost -20%
+- siege ladders build time +3-4 hr as more than one is in use
+- increase penalty for stealing cows: honor -1 -> -5, lord relation -3 -> -5, village relation -5 -> -15
+- increase penalty for stealing food: honor -1 -> -5, lord relation -1 -> -5, village relation (capped at -55): -1 -> -5 for player village, -3 -> -15 otherwise
+5. Prisoners prices -15%, lords’ ransom -15%
+6. Mounted archers =>30 will cost +20%
+7. CUSTOM KNIGHTHOOD ORDER
+- thanks to Dusk Voyager's script CKO units will equip all items from inventory (e.g. all will spawn with two quivers)
+- training progress is checked more often (-25%) - should reduce training time
+- knights and sergeants genders can be set independently
+- rearranged and added items unlockable for CKO:
+-- separate dialog option: Maltise, Ithilrandir, Aeldarian, Syla, Burilgi, Heynrich, Alaric, Rasmus
+-- addition to diamonds: Kjuda, Zulkar
+-- items enabled via script - changed abundance 100->1
+-- added missing/new Noldor items (both gloves, knight helmet, cape versions of armors) to both lords or Elcari 
+8. KNIGHTHOOD ORDERS
+- ability to buy full armor set, shield and horse from the Knight or Sergeant in the castle (not CKO!); to access minimum 1200 renown, 30 honor and +30 relations required OR player is Grandmaster (additional discount); prices depends on relation level, but even with 100 points, items are 35% more expensive then in shop (for 14 trade)
+- during promotions in a KO's hierarchy player will receive given KO's shield as well (so far only armor and horse) 
+- added Order of the Kraken Cultists - very strong infantry with ranged capabilities upgradeable from Fierdsvain nobles
+- removed Ebony Gauntlet from Senderfall, increased their spawn rate in Avendor 20->30
+- King Gregory IV not going to create Falcons
+- reduced honor required to join Eventide 20->5
+- handle Snake's or Heretic's Book to enemy order (castle) to receive small gratitude and boost to relations (1 book = +1, 3 books = +5)
+- Griffons: 
+-- other kings would not create this chapter
+-- player can create chapter without Sir Darlion or "letter", if he/she created own kingdom and follows Old Pendor culture
+- all knights have a chance to appear in the tavern; knights share some information about their orders
+- halved chance of generating free knights and sergeants in chapters owned by player; a side note: intention of the creator of this feature was to give player free 1 knight per chapter per month (on average as it is random), but changes in the other part of the code made it 10x more (10-12 soldiers); now it is still generous 5-6
+9. ALEXIOS OF MELITINE
+- adds only allowed modifier to the item (e.g. max for "leather" armors is hardened, not lordly)
+- player can ask once (per upgrade session) to accelerate upgrade process (-33% time, cost per day = 50% item price reduced by party trading skill, then divided by total upgrade days needed)
+- will work with almost all items (only Qualis and unique items are excluded); days to reach each stage are as follows
+-- armor/helmet/gloves/boots "metal":---plain/thick/superb(20)----reinforced(30)------------lordly(50)------if body armour(+30)
+-- armor/helmet/gloves/boots "leather": plain/sturdy/superb(20)---thick(30)-----------------hardened(50)----if body armour(+30)		 
+-- shield:------------------------------plain(10)-----------------thick(15)-----------------reinforced(20)
+-- arrows/bolts:------------------------plain(10)-----------------largebag(20)		
+-- xbow:--------------------------------plain(20)-----------------fine(30)------------------masterwork(50)		 
+-- bow:---------------------------------plain/fine(20)------------strong(30)----------------masterwork(50)
+-- thrown:------------------------------plain(10)-----------------balanced/heavy(15)--------largebag(20)
+-- polearm (long axes):-----------------plain(20)-----------------heavy(30)-----------------masterwork(50)	 
+-- polearm(lances):---------------------plain(20)-----------------fine(30)------------------balanced(50)
+-- 1h2h (axes and maces):---------------plain(20)-----------------balanced/heavy(30)--------masterwork(50)
+-- 1h2h (most swords):------------------plain/fine/exquisite(20)--balanced OR tempered(30)--masterwork(50)	
+-- 1h2h (remaining "swords"):-----------plain/fine(20)------------balanced(30)--------------tempered(20)
+-- 1h2h ("lesser"):---------------------plain(5)------------------fine(5)-------------------heavy(5)
+10. SENESCHAL'S WAR MENU
+- enable/disable automatic troops training in the Training Grounds in a given location
+- accept 10 or all (up to max capacity of player's party or money) noblemen into player court
+- player need more "right to rule" points to hire better mercenaries (up to now it has required specific relations with minor factions, which were hard to gain, due to low presence on the world map)
+11. GUILDMASTERS
+- sell/buy diamonds, which allow to store money in a more safely way
+- three sizes for 10k, 50k, 100k gold
+- relation with city need to be at least 0, +10, +15 for options to appear
+- 5% fee when selling
+- diamonds can be sold to the merchants for 10% of their nominal value
+- small amount of money from each "buy transaction" is added to the city wealth
+- when player captures a unique spawn, hero can trade his/her freedom for Large Pouch of Diamonds (instead of 100k denars)
+12. TAVERNKEEPERS
+- added info about locations of all invading armies (cost 2000 denars, saved to the Game Log)
+- 2x Various Loot could be exchanged for Baggage Train (if none present in the game world)
+- to avoid fight with Belligerent Drunk ("Do you have any idea who I am?") player will need 1000 renown (was Native 150)
+13. RANSOM BROKERS
+- removed Queen Agnus Freebooter, Singalian Horseman, Barclay Lancer, Red Fletcher Longbowman
+- added (chance 10%, 15-19 units at once): Melitine Free Brother, Mettenheim Avonteurer, Barclay Adventurer
+- their hire price based on level (+25% if mounted, +30% extra)
+- added option to hire unlimited number of common mercenaries - squad of 30 soldiers (mixed tiers, enlist price +40% above "tavern merc")
+- gamble with Ramun to get access to some unique troops
+- Iris the Lotus will sell cloths (for player to outfit wife)
+14. Clarissa of Pent can sell (400 denars) and buy (100 denars) capes. For option to appear player must have 400 denars and "allowed armor" equipped (only armors which have both versions - most plates and Noldor). 
+15. Once a week one companion may be asked for a few special troops (player lv =>20); if companion in tavern 1-6, in party 2-4, who act as a lord 1-2; their hire price based on level (+25% if mounted, +20% extra)
+16. NOLDOR
+- adjusted prizes received after winning Noldor tournament (chances, quality and quantity); some cheaper items are bundled
+- Noldor Maiden Ranger gives honor +1 when released by player
+- relations with humans reduced (e.g. with player -20->-30)
+- added option to reduce relation with Noldor by -10 at one time
+- pass Noldor Trade Goods to Arandur and Quigfen to receive more troops
+- changed Noldor Warrior to Noldor Hunter as prisoners in Jatu Army (Quigfen's quest)
+- after battles, in which the Noldor lords fight against "Qualis Gem heroes" (e.g. Wolfbode the Slayer, Eyegrim the Devourer, Seeress), defeated hero always escape  
+17. KINGS/LORDS
+- kingdom would look for a peace, if suffered devastating losses	
+- lord with a small army (<=70 soldiers or <=60% of "ideal party size"), who is currently at a walled fief (e.g. was beaten and just respawn), should not leave location
+- (as a result of above) taxes from lord's fiefs are automatically transferred to his account every week (was every month)
+- after conquering walled fief lord (not from kingdom ruled by player) will leave bigger garrison behind  
+- added fief exchange with lords (modified and fixed Leonion's tweak 28)
+- added info about lords wealth to the info page
+- increased penalty for rejecting ransom offer (relation -4 -> -10, honor -1 -> -5)
+- marshal (player) can give order "There is a fortress which can easily be taken. Go to.."
+- added dialog option to free player's lord kept in player's faction prison (lord switched to the player's faction while he was in prison)
+- during coronation player will be able to choose one of 11 crowned battle helmets (different designs, the same stats)
+18. WIFE
+- player is able to design her outfit - see Iris the Lotus for allowed items selection (and Royal Crown); desired items need to be placed in the 1st row of "household possessions"
+- if she wears hat, player can ask her to put it away in to "household possessions" storage area
+19. CHESTS IN ALL CITIES
+- have max capacity
+- Sarleon: Lion Warhorse replaced with Sarleon Armored Warhorse
+- Janos: replaced Marius Helmet with Runed Bastard Sword
+- Javiksholm: replaced Runed Bastard Sword with Ancient Rune Axe
+20. CARAVANS
+- Pendor caravans will recruit Pendor troops
+- replaced Mercenary Infantry with Mercenary Warrior in all caravans
+21. RENEGADES - increased (once every 5 days -> once every 4 days) spawn chance of renegades: various Adventures and Renegade Knights Companies, adventures from Barclay, Mettenheim, Veccavi and Melitine)
+- Renegade Knights Companies:
+-- reduced spawn chance (~ 16%->10%) of kingdoms specific groups ("Sarleon Noble Outlaws", "Fierdsvain Renegade Nobles" etc.)
+-- increased spawn chance (~ 1%->2%) of all remaining, more unique, groups ("Red Fletcher Hunting Party", "Renegade Omen Seekers" etc.)
+-- are a bit stronger 
+- increased (5%->10%) spawn chance for a adventures (non hero) parties from Barclay, Mettenheim, Veccavi and Melitine
+- Adventures Companies ("Treasure Seekers", "Outlawed Adventure Company" etc.)
+-- are stronger (bottom range by 85%, upper by 50%)
+-- removed Maiden Warrior from female AC as it is the only unmounted unit in the group (should be initially faster on the world map)
+-- removed Maiden Adventurers from male AC
+22. MENUS/SETTINGS
+- added Barclay,  Mettenheim, KOs' Knights & Sergeants to the Troop Trees in Reports
+- added the "ratio bar" displayed on the battlefield screen (number of allied troops vs. enemies); may: be disabled, include reinforcements/reserve
+- revamped the mod options page
+- siege attackers waves 40->32
+- added 2 options to display messages on deaths in player army and kills by player
+- added option to display a full screen or log only message about village attack/raid
+- set can_crouch = 0 as high tier range units can't hit crouching soldiers; players can enable this feature easily in the "module.ini" file
+- there were two types of blood particles : "line" of big, slow, long lasting droplets and "cloud" of small, fast moving, fast despairing droplets; removed "line"
+- updated Notes -> Game Concepts -> Reference: Knighthood Orders
+- in the CAMP menu - added option to "Access companions' inventories" directly, without going through conversations first; useful, if player want to equip companions manually (e.g. player has just received nice sword, which want to give companion1; then current companion1's sword is going to companion2; ...;  then current companion(last-1)'s sword is going to companion(last)); to make process even faster use ESC to return from outfitting screen to the companion list
+- added confirmation dialog when player asks his/her vassal to train troops according to kingdom culture; moved dialog to the "can I ask you something" sub-menu
+- removed option to not accepting Mettenheim Arbalest - it is free after all
+- increased sum which player needs to pay in the "I wish to make peace with the ..." dialog (250 to 1960 -> 1250 to 9800)
+- added Leonion's "Advanced Soldier Management in Exchange Screens" OSP - select troops/prisoner stack AND hold one of the keys combination listed below AND press give/hire/take/capture button
+-- capture all prisoners - LEFT CTRL + A 
+-- take all prisoners from garrison - LEFT CTRL + A
+-- give all prisoners to garrison - LEFT CTRL + D
+-- hire all soldiers - LEFT CTRL + S
+-- give all soldiers to garrison - RIGHT CTRL + ARROW LEFT
+-- take all soldiers from garrison - RIGHT CTRL + ARROW RIGHT
+-- move stack one position up inside garrison -  ARROW UP - (doesn't work if single soldier in the stack)
+-- move stack one position down inside garrison - ARROW DOWN - (doesn't work if single soldier in the stack)
+-- move stack to the top of garrison - PAGE UP - (doesn't work if single soldier in the stack)
+-- move stack to the bottom of garrison - PAGE DOWN - (doesn't work if single soldier in the stack)
+23. QUESTS/MISSIONS
+- reviewed all quests rewards, added few missing ones; almost quests rewards and opponents quality (Nervous Man, Hired Assassin, Belligerent Drunk, "follow spy" party etc.) scale with player level
+- added throwing daggers to the player's inventory during "sneak in to the town" type of missions
+- after "gather support" missions companions will bring few warriors with them (tiers depends on player level)
+- "Heartbeat quest" - added more troops and Melitine company
+- KO's renown quest - player can dismiss own soldiers in order to make space for KO units (reward)
+- KO's bounty quest - added Inquisition for:
+-- Scorpion Assassins: Steppe Bandits and Inquisition (were Adventurers)
+-- Knights of Eventide: Inquisition (were Steppe Bandits) and Singalians
+-- D'Shar Windriders: Steppe Bandits and Inquisition (were Adventurers)
+24. Added small reward (two rare items) for defeating minor factions armies (e.g. Heretic Army); Eyegrim and Three Seers unlock items for CKO and give reward (e.g. Qualis Gems) when defeated; due to mentioned changes Demonic Magnus don't need Qualis Gem anymore  
+25. Hero (e.g. lord) escape rate form player field army is based on player's prisoner management skill (40% to 20% for 0 to 10 PM points; checked every 2 days; was constants before). Hero escape rate form a walled fief which belongs to the same faction as player, is based on local seneschal prisoner management skill (20% to 10% for 0 to 10 PM points; halved if Prisoner Tower is present; checked every 2 days; was constants before).  
+26. Added "enhanced horse archers AI" to the "POP options" menu. Disabled by default as it is very powerful and may be enabled by player manually. Options are: "NPCs only" (e.g. companions, unique spawn leaders, lords), "All units".
+27. OTHERS
+- Scorpion Assassins replaced D'Shar Ghazi Reavers as "night bandits"
+- walled fiefs interiors are guarded by the top common soldier from given faction
+- "date fruit" is recognized as food
+- patrols from fiefs owned by player won't accept more than total of 100 soldiers as a gift
+- new NPC in one of the towns
+
+
+"WORLD"
+1. MAP
+- fixed minor imperfection on the world map (e.g. stretched map texture on a sharp edge)
+- new mountain texture
+- added a wooden bridge near Singal and made the nearby mountain pass more visible
+2. INTERIOR SCENES
+- plenty of new and replaced scene items: 9 paintings, 11 carpets, vegetables, fruits, bread, candles, chandeliers, scrolls, chairs, statues, long table, fixed torches, oil lamp, brazier, cauldron, plates, meat, steampunk style globe and bathtub
+- reworked taverns and town castle scenes, as well as the wedding scene (items, light, layout, textures)
+- changed Sarleon castle scene, moved the globe to the ceiling
+3. EXTERIOR SCENES
+- added Lucky Lancer's training fields
+- fixed the few floating trees on the snow and plain maps borders
+- Elacrai
+-- changed siege scene: adapted terrain and added a second ladder
+-- training grounds: moved spawn points closer to the middle of the arena, moved two of them above ground, max number of opponents is 4
+- it should be a bit easier to "sneak in"
+- during siege defense player will refill ammo slower (1min->3min; there is an option to ask the nearest soldier from player party to share ammo - press "o") 
+- reviewed, corrected and improved most walled fiefs' siege scenes - they should protect defenders better; fiefs done:
+-- Sarleon: towns, Kelredan, Mobray, Talon
+-- Ravenstern: all
+-- D'Shar: towns, Sher Quila, Sange Safid, Saidu Sharif, Shadi Shahid
+-- Fierdsvain: all
+-- Empire: towns, Savador, Walven, Rela Keep, Oregar Castle
+- improved AI pathfinding in Orin village
+
+
+"TROOPS/FACTIONS"
+1. PENDOR
+- reviewed Pendor reinforcements - strength in line with the other kingdoms
+- reviewed companions' unique reinforcements - strength comparable with the standard lords' templates
+- Lancer and Light Lancer were merged with Cavalry and Mtd. MAA as "lancer fix" made them redundant
+- Cavalry prof 235->210, all stats -1
+- Mtd. MAA prof 275->250, all stats -1
+- Armored Bowman Helmet with Cap -> Visorless Sallet
+- Footman Leather Boots -> Dark Leather Boots (to match armor)
+- Heavy Spearman prof +10, Heater Shield -> Heavy Heater Shield, added Long Spear, Leather Gloves->Iron Gauntlets, Leather Boots->Mail Boots,  added Armet
+- Swordsman added Armet
+- MAA removed Helmet With Cap (28 head armor), added Mail Mittens
+- Bladesman Heraldic Mail -> Heraldic Mail with Tabard, Cap & Chain Helm -> Maximilian Helmet - Open
+- Squire Saddle Horse - > Darksteel Hunter
+- Foot Knight Claymore -> Battle Hammer, Iron Gauntlets -> Hourglass Gauntlets
+- Knight added Battle Hammer and Silvered Longsword, Iron Gauntlets -> Hourglass Gauntlets
+- Pendor_Black_Archer lv 36->40, Dark_Shynbaulds->Iron Greaves and Mail Boots, Black Steel Mittens and Black Steel Gauntlets->Black Hourglass Gauntlets and Hourglass Gauntlets
+2. SARLEON
+- added common Calvary (lv 31 from Armored_Footman)
+- MAA prof 220->240, added mail mittens and steel hammer, guaranteed gloves
+- Halberdier Great Helmet -> Steel Sallet, Heraldic Mail -> Polished Plate Armor
+- Marleons Heavy Cavalry Flat Top Helm -> Open Bascinet With Feathers, guaranteed gloves, both mail boots -> Polished Plate Boots 
+- changed Knights helmets to better fit their culture
+- Red Fletcher Longbowmen - buffed skills and stats, archery 200 -> 280 guarantee helmet and gloves, lv 20->36
+- Recruit added Red & White Leather Vest
+- Longbowman Chain & Studded Leather Hauberk -> Mail & Leather Archer Hauberk (buffed stats by +5/+6)
+- Armored Longbowman added Sarleon Red Platemail
+- Sarleon Squire-at-Arms Three Lions Mail & Surcoat -> Mail with Surcoat  
+3. RAVENSTERN
+- Kierguard melee prof 290->280, swapped his skills (ONLY) with Ravenstern Highlander
+- Horseman upgradeable from Ravenstern Footman
+- Ranger - guarantee gloves
+- Mtd. Ranger - guarantee gloves, Northern Kilt Over Mail With Cape -> Ravenstern Plate & Mail
+- Knight added Silver Great Claymore, Battle Hammer and Ravenstern Longsword, changed helmets and armors to better fit northern culture
+- reduced Highlanders ransom price 600->400
+- Warden 
+-- Surcoat Over Mail (green) -> Ravenstern Surcoat Over Mail (tartan) (the same stats)
+-- removed Heraldic Mail With Tabard and Heraldic Cuir Bouilli
+- Man-at-Arms Surcoat Over Mail (green) -> Ravenstern Surcoat Over Mail (tartan) (the same stats)
+3. D'SHAR
+- more troops have (guaranteed) gloves
+- Horseman D'Shar Sabre -> Desert Cavalry Sword, Heavy D'Shar Sabre -> Desert Guard Sword
+- Noble Cavalry - armor and boots replaced with D'Shar Plate Armor and D'Shar Brass Plated Boots
+- swapped War Darts and Assassin Throwing Knives between Noble Cavalry and Ghazi Reaver
+- Djaha Archer agi 15->24, guaranteed gloves, added Dark Leather Gloves and Superior D'Shar Arrows, body armor +4 -1kg, Round Cavalry Shield -> Embossed_Round_Shield, Splinted Leather Greaves -> Soft Soled Plate Greaves, Heavy D'Shar Sabre -> Two Handed Heavy Sabre
+4. FIERDSVAIN
+- reworked all ranged units
+- added "spear only" troops
+- Huscarl lv 36->38
+- Noble Warrior (formerly Sword Sister) added one more Golden Maned Courser
+- Hersir (formerly Valkyrie) added one more Golden Maned Courser, Golden Deer Warhorse-> Green Leather Draped Warhorse
+- in the Fierdsvain army, up to Fierdsvain Trained Militia and noble line, serve about 35% women
+- decreased levels and charisma of few vassals (both parameters influence party size)
+5. EMPIRE
+- Light Cavalry 
+-- renamed to Empire Levy Horseman
+-- upgradeable from Empire Levy Hunter
+-- removed Empire Breastplate, Empire Breastplate With Cape
+-- xbow proficiency 130->170
+- Empire Horseman renamed to Empire Cavalry for consistency
+- Legionnaires equip more throwing weapon (20%->45%); has lower attack autocalc value
+- Gladiator
+-- removed one Black Iron Spear, replaced second with Trident (fits more this unit)
+-- removed 3x Broadhead Spears (left one instance, but they will actually equip more of them)
+-- Sword of  War -> Empire_Great_Sword
+-- from Armored Pikeman
+-- lv 60->50
+- Armored Pikeman replaced one Awlpike -> Long Awlpike
+- Knight lv 35->40, str 21->24
+- Empire Broadsword thrust damage 18->22
+- Iron_Circle_Centurion level 45->50
+- increased levels and charisma of few vassals (both parameters influence party size)
+6. INQUISITION - new "flavor" minor faction, 
+- hero Holy Inquisitor Rasmus Devatica hunts Heretics and "persuades" D'Shar to forget about their false gods
+- army, warband, patrol size groups
+- Monks and Pilgrims can be upgraded to the more potent "holy warriors", who wield blunt weapon only
+- if D'Shar kingdom is defeated, all armies are recall and few groups start to hunt Heretics in the central part of Pendor
+7. KNIGHTHOOD ORDERS
+- reviewed knights, matched equipment better, levels correlated with real battle performance (checked in >600 tests - sieges and open field vs. various opponents) and modeled autocalc 
+- Knights of the Raven Spear upgradeable from Ravenstern Knights (were Pendor Knights)
+- Shadow Wolves upgradeable from Empire Knights (were Empire Legionaries)
+- renamed "Lady Valkyrie" to "Valkyrie"
+- Falcon Order:
+-- upgradeable from Maiden Adventurers (were Maiden Noble)
+-- not enough Red Brotherhood and Adventures parties to complete the bounty quest - switched Adventures to Jatu
+-- added men knights
+- Shadow Legion Centurion received Ironbred Stallion
+- reviewed all sergeants (checked in >500 tests vs. various opponents): 
+-- Phoenix Squire upgradeable from Empire Horseman
+8. MERCENARIES/UNIQUE SPAWNS
+- reworked Mercenaries Tree, wages increased +66%->100% as they become stronger
+- adjusted numbers, composition of some mercenary/unique spawn companies (e.g. Griffonsword, Kodan)
+- buffed stats of both unique spawns and mercenary leaders; added some guarantee flags and few missing items
+- normalized strength of player's mercenary companies and increased initial payment 10k->15k 
+- buffed unique soldiers of The Snowlion Brigade, increased number of soldiers; they can be hired by player and AI only if Ravenstern Kingdom is not defeated yet  
+- Knights of the Unicorn gloves and helmet are black as the rest of their equipment
+9. SNAKE CULT
+- are able to slowly recover from the "obliterated" stage
+- added new unit - Asp Vanguard - Maltise's bodyguards outfitted with unique armor set and weapon
+- Maltise received supreme Asp's set
+- Anaconda Knight strength +5, agility -1 as not totally undead, just "modified" by Priestesses
+- Cult Armsman strength 12->15
+- Cult Follower added Snake Circle Shield 
+- Dread_Legion_Infantry
+-- left only 2x Javelins (more troops will use them on the battlefield)  
+-- Gauntlets -> Dark Leather Gloves
+-- Black Greaves -> Black Steel Greaves
+-- Testament_Shield -> Engraved Round Shield, Engraved_Serpent_Shield, Embossed Round Shield
+10. HERETICS/"ZOMBIES"
+- Eyegrim_the_Devourer has only 1h Ruby Axe as melee weapon, received Demon Helmet
+- Fallen_Revenant received guaranteed Demon Helmet
+- replaced Double Axe with Thunder Double_Axe (designed for Heretics) for: Fallen Footman, Fallen Veteran, Fallen Warrior, Fallen_Revenant
+- Fallen Footman lv 20->25, added Old Kite Shield, Short Steel Sword, Long Spiked Club
+- Fallen Veteran lv 20->30, Voulge -> Shortened_Voulge, added Long Hafted Knobbed Mace
+- Fallen Warrior lv 20->35, Voulge -> Voulge (better type), Bardiche -> Great Long Bardiche
+- Doomguide and Possessed Doomguide received small shield; Possessed Doomguide set as "always fall dead"
+- Worshiper:
+-- Dark Knight Helm -> Black Knight Helm
+-- Black Great Helm -> Horned Black Helm
+-- Hunter -> Dun Hunter
+-- Mail Boots -> Dark Leather Greaves
+-- Iron Greaves -> Dark Leather Boots
+- Magnus: 
+-- Faceplate -> black hooded helms
+-- Dark Knight Helm -> Black Knight Helm
+-- Tear Shield -> Magnus Shield
+-- Embossed_Serpent_Shield -> Heretics Tear Shield
+-- Dark Crimson Charger -> Imperial Dark Stallion
+-- Ironbred Charger -> Imperial Dark Stallion
+-- Gauntlets -> Black & Gold Gauntlets
+-- added Horned Black Helm
+- Seer Initiate added Hafted Blade
+- Seer Favorite Iron Staff -> Hafted Blade, Voulge -> Shortened Voulge
+11. METTENHEIM
+- Hauptmann lv 40->45, has armor with cape ... 
+- ... while Greatsword without
+- Mettenheim Spieszknecht prof 290->270, removed Bec de Corbin, replaced Long Awlpike (can't brace) with Ashwood Pike
+- Mettenheim Forlorn Hope lv 47->55
+- Mettenheim Regular Infantry prof 250->270
+- Heavy Crossbow  Mail Coif -> Kettle Hat
+- Regular Crossbow added Mail Coif
+- Regular Infantry removed Mail Coif and Kettle Hat
+12. BARCLAY
+- renamed troops (made up names)
+- replaced Heavy Footman and Sapper with Barclay Adventurer (upgradeable) in taverns
+- Heavy Footman - Barclay Noble Sword and Morningstar instead of Claymore
+- Sapper - removed shield
+- Conquistador lv 47->55
+- Lancer 40->45
+13. MELITINE
+- removed 'guaranteed horse' from Archer and Infantry
+- Melitine Free Brother prof melee 170->185, ranged 250->220
+- Melitine Infantry prof ranged 150->250, Army Sword->Melitine Sabre
+- Melitine Archer prof melee 200->220, ranged 250->280
+- Melitine Heavy Horse Archer Leather Gloves->Dark Leather Gloves
+- Melitine Griwbanar lv 47->40, skills, prof, attr nerfed
+- Melitine Lancer upgradeable from Melitine Infantry instead of Melitine Archer
+- most of factional equipment buffed
+14. VECCAVIA: 
+- Bloodsworn Guard skills +1, removed Golden Metal Round Shield
+- Kral Guard lv 30->20, str 18->15, skills -1, upgradable to Krom Guard
+- Krom Guard removed War Spear
+- Uncut Ancient Engraved Shield -> Round Steel Shield, Golden Metal Round Shield -> Heather Shield White Unicorn on Blue Field, Plate Boots -> Iron Greaves
+- Sentinel archery 270->290
+- Man Hunter lv 10->15
+15. JATU
+- Jatu are able to slowly recover from the "obliterated" stage
+- buffed slightly Zulkar's Grim Riders, both heroes and their armies; added up to 5 Noldor Hunters as prisoners 
+- decreased min numbers of soldiers in a Jatu Army to compensate above
+16. VANSKERRY
+- reworked Vanskerry tree, 
+- updated party templates
+- Warrior Metal Spiked Mace -> Vanskerry Short War Sword
+- Queen Agnus Freebooters buffed skills, removed ranged flag, guarantee gloves, lv 40->36
+17. MYSTMOUNTAINS
+- Wolfbode Honor Guard received Ironbred Stallion,
+- Bearclaw Berserker lv 50->45, Northern Battle Axe -> Long War Axe
+- Raider added Leather Steppe Cap
+- Warrior added Fur Steppe Cap
+18. SINGALIAN
+- Singalian Horseman agility 12->15
+- Singalian Temptress xbow prof 250-320
+19. NOLDOR
+- added hooded version of their helmets and rearranged their armors a bit to crate visually matching sets
+- Hunter added not guaranteed hood,
+20. "COMMON" Heroes
+- Maiden Noble added all variations of blue helmets and Azure_&_Gold_Gauntlets
+- Hero Adventurer: 
+-- removed Long Cavalry Lance, Noldor Composite Bow
+-- replaced 2x Arrows -> 2x D'Shar Arrows, Short Composite Bow -> Hornbow,
+-- reviewed armors and helmets
+- Heroine Adventurer: 
+-- removed Heavy Lance
+-- added Ebon Bow, Noldor Composite Bow
+-- replaced Steel Bolts -> Siege Bolts, D'Shar Arrows -> Arrows
+-- reviewed armors and helmets
+- all Rogue Squires & Knights match color scheme of their kingdoms; equipment more in line with levels
+- small changes to the lesser units from Adventurers troop tree,
+21. OTHER
+- buffed Warden and Sheriff stats and equipment, both units use only blunt weapon
+- Iceguard Ranger replaced both Double Headed Hawk on Violet Surcoat -> Scale Armor (unique to them)
+- Outlaw Knights of the Boar removed Black & White Winged Helm with Crown
+- Outlaw Knights of the Owl - replaced items to follow grey/yellow color scheme
+- Deserters from five main kingdoms armies are upgradeable to Pendor Recruits and Sellswords
+25. CHANGED UPGRADE PATHS
+- added for: Townsman, Caravan Master, Vanskerry Marauder, Mystmountain Raider, Heretic Worshiper, Barclay Heavy Footman, Veccavi Kral Guard
+- removed for: Hauptmann, Barclay Lancer, Melitine Heavy Horse Archer, Veccavi Knight
+23. Reduced quality of companions' items - they shouldn't be treated as fashion manikins presenting player future equipment 
+24. KINGS/LORDS
+- equipment had been reviewed in order to match better NPCs background
+- their items have the best possible modifiers which given NPCs can handle 
+- kings and Noldor lords get secondary weapon, when they handling unique one to the player
+- each king has unique crown
+25. PRETENDERS
+- their stats match the lore better
+- all have household troops
+- access to their inventories is locked, as they are fully equipped with king’s quality items (with modifiers)
+- each pretender has unique crown
+- after successful rebellion, they will receive a crown to wear in rooms, just like other kings do  
+26. Singalian Vidona and Snake Cult Leader (both hero and common) have "custom female" faces
+
+
+"ITEMS"
+1. ADDED
+- Cavalry Mace, Cavalry Club, Steel Hammer and Battle Hammer
+- Valkyrie helmet
+- Demon Helmet
+- Asp Set (6 items) and supreme version for Maltise (2 items)
+- Unicorn Helm and Open Unicorn Helm for Knight of the Unicorn
+- Supreme Raven Helm for Ravens
+- Barclay Light Armor and Morion for Barclay Adventurers (thanks to Cozur)
+- three quality Fierdsvain style helmets 
+- new lady dresses
+- Kraken: two shields, helm and armor
+- Marleons Heather Shield
+- trident
+- Noldor Plate Greaves
+- armors with 5 colorful tabalts
+- Ravenstern Surcoat Over Mail (tartan)
+- three Long Knight Lances: red/green/blue stripes on while background
+- three Long Cavalry Lances: red/green/blue stripes on while background
+- two pretenders’ helmets
+- three Heretics shields
+- four hoods
+- hooded helmets, including Noldor (vertex colored, just like armors' capes)
+- Steel Sallet with Red Feather
+- Griffon Bascinet
+- "weapon2" texture by Leonion (resized to 1024) 
+2. REMOVED
+- unused meshes and textures
+- Maciejowski Helmet Black
+- Shadow Wolf Short Sword - model used in Wolf Sword 
+3. REDONE
+- simplified and resized shields models
+- improved mesh and added male version of Falcon Plate, Valkyrie Stag Plate and Valkyrie Unicorn Plate
+- Silvermist Mail Hauberk
+- armors from Ohagi-junT's "PoP Adaptation files for(Prophesy of Pendor3.7063)": aqs_std_lthr_coat, aqs_nobleman_outf
+- Dark_Knight_Helm
+- optimized feather on Jatu_Mask_Helm
+- Noldor Warsword
+- Polehammer
+- an_sword01
+- ashenborn reaver halberds - lower poly, smaller
+- ashenborn 2 handers - lower poly
+- ashenborn2hs & snake sabre transferred to 1 texture
+- created scabbards for above swords
+- King Ulric's Lance
+- joust_of_peace, heavy_lance, heavy_lance_02, heavy_lance_03, colored arena lances for each team
+- awl_pike_b, pike,
+- spear3, screwedspear3, spear, spear_f_2-9m, bretonspear,
+- japanspear, realglaive - lower poly
+- unique model for Kaverra's Manopener
+- realpolehammer, realbastardaxe, realbattleaxe, realhalberdd
+- battle_ax, rustysword_a, dagger_b, club
+- Griffon_Warhorse -> recolored from purple to back
+- heater_shield_08 black unicorn on white field -> white unicorn on blue field
+- Scorpion Sword - recolored to match Scion armor
+- Griffon Warhorse - gold pieces -> white pieces
+- Immortal Primus armor - retextured a bit to match Empire gold helmets; (Immortal Armor - optional gold texture "a_immortal_armor_optional")
+- Dragonspine - gold parts should match Valkyrie's armor
+- Mystical Rune Plate
+- Noldor Trade Goods
+- tournament axe
+4. FIXED
+- shields dimensions match their descriptions
+- resized ~100 weapons - meshes match stats
+- renamed some items for better identification (e.g. Great Helms) or to avoid clashes with modifiers (like old sword)
+- (improved) how deep missiles penetrate meshes 
+- Eventide helmet - corrected inventory image
+- head clips: flattop_helmet_new.lod1, ridge_helmet_a/b/c, corinthian_helm_01/02
+- gloves clipping for few armors 
+- normanhelmwithcoif - moved a bit back
+- axe and great axe - corrected and optimized meshes (to fit 2h role)
+- assassin_knives corrected animation
+- pa_pop_armor_02_snouz applied manual lods from aqs_plate_armor2
+- added "carry flag" to few items
+- Blunt Steel Polehammer changed thrust animation
+- Phoenix Broadsword and Phoenix Longsword - swapped names - better fit meshes
+- toned down contrast on haume_balder's texture
+- coat of plates - sleeves fit plate gloves
+- most of surcoats 
+-- sleeves fit plate gloves
+-- optimized lods
+- Fierdsvain_Vendel_Helm - moved slightly down and back
+- "empire style" throwing spears too long to be carried in quivers - switched to "carry as spear"
+- reduced black areas on CWE horse models (lod2 only) by removing vertex colors 
+- Lion Squire's Surcoat swapped mesh with Three Lions Mail & Surcoat
+Red_Surcoat_on_Fine_Mail
+- added lods for: Steel Sallet, Iron Sallet, various bolt bags, Foreign Sabre, Shadow Hunter Armor
+- D'Shar Lady Dress and D'Shar Leather Lady Dress (back lower part - clipping legs)
+- made Runed Silver Axe more silver
+- D'Shar Nobles Clothing (lamellar_ssm_034) - longer legs and legs skinning
+- shape of: Jatu Guard Boots, Light Leather Boots
+- surcoat_15 (Knight's_Surcoat) - improved textures
+- Immortal/Primus Armor - improved legs
+
+
+"ITEMS STATS - the most noticeable changes"
+1. Difficulty reviewed and set for most items
+2. Gems weapons 
+- each gem gives different bonuses
+- are set to "unique"
+- melee versions have only plain modifier, bows - masterwork
+3. 1H 2H
+- Runed Bastard Sword 43c 35p 3kg 110speed 4200gold (was 48c 42p 3.25kg 118speed 5103gold); done as its "masterwork" version (53c 47p 3.25kg 119speed) made rune melee weapons almost obsolete (require 2-3 Qualis, which could be used on elixirs or CKO instead)
+- Noldor Warsword 42c 30p 2.8kg 103speed 3000gold (was 36p 20p 3.25g 96speed 2101gold)
+- strange_rune_two_h_sword 55c 30p 3.3kg 90speed 9303gold (was 65c 38p 2.25g 95speed 19303gold)
+- Koningur's_Waraxe 60c removed thrust value 4.5kg 95speed 11000gold (was 55c 23p unused 5kg 81speed 1350gold), unique
+- Havathang, Dragon's Tooth, Orator Baccus Sword set as unique
+- dire_axe 2778->3700, diff 13->30
+- ancient_rune_axe 2238->3300, diff 13->19
+- long_axe_c 1399->1800
+- long_axe_c_alt 1399->1800
+- long_axe 697->820
+- long_axe_alt 697->820
+- doom mace 351->2000, added can_knock_down, removed merchandise flag, CKO unlockable by unique spawn
+- viper sabre 2100->1100, enabled scabbard
+- noldor_longsword weight 3->1.8
+- ebony_bastard_sword 1521->3200, weight 2.8->2.5
+- all ebony 1h range from 1200 to 1700
+- strange_great_sword 2277->2700
+- Eventide Longsword thrust damage 21->24, value 311-400,
+- Empire_Broadsword thrust damage 18->22
+- Wolf Sword swing damage 30->32, thrust damage 19->24, speed 100->105, weight 1.8->1.5, value 245->380, diff 8->10
+- Scorpion Sword swing damage 30->35, thrust damage 19->24, speed 100->95, weight 1.5->2, value 245->450, abundance 10->1, diff 8->12
+- Phoenix Longsword 1310->800
+- Phoenix Broadsword  swing damage 28->31, weight 1.5->2, value 1200->650, abundance 10->5, diff 9->12
+- barclay_sword 415->500
+- rav_longsword 354->420
+- bastard_sword_b 245->390
+- sword_medieval_c_long 182->280
+3. SHIELDS
+- Melitine Tear Shield weight 6->5
+- Melitine Horseman Shield weight 3->4
+- Immortal Shield speed 75->82, hit points 500->600
+- Empire Infantry Shield speed 65->80
+- shield round 26 350->200
+- Netherworld Shield removed merchandise flag, CKO unlockable by unique spawn
+4. POLEARMS 
+- Banner_of_Sarleon - 4500->10000, unique
+- Blunt Tip Lance 127->1800, abundance 10
+- great lance 167->600, damage 21->23, speed 55->80, weight 5->3.5
+- long_knight_lance, weight 2.9->4
+- Bec de Corbin is not pike, Southern Glaive is
+- Melitine Spear 30p/1.5kg/90/153cm/diff0/abund10/190denars -> 36p/2.5kg/100/153cm/diff0/abund5/290denars
+- Melitine Gutspiller 28p/1.5kg/89/162cm/diff0/abund10/210denars -> 34p/3kg/90/162cm/diff15/abund5/310denars
+- Melitine Impaler 25p/2.5kg/70/200cm/diff13/abund1/300denars -> 27p/3.5kg/75/200cm/diff15/abund1/310denars
+- Melitine Lance 25p/5kg/70/215cm/diff13/abund10/380denars -> 26p/3.5kg/73/215cm/diff15/abund10/410denars
+- Practice Lance - removed merchandise flag
+5. RANGED
+- added all bow's modifiers (cracked, bent, fine, strong, masterwork) to: Noldor Composite, Darkwood, Ebon, Hawkstorm and Short Composite Bow
+- emerald_rune_bow 4923->17962
+- Heritage_Daja_Bow accuracy 98->95, unique
+- Duskfall set as unique
+- UllrVetr Manifest - "sniper rifle" to kill shield-less Wolfbode from far away: accuracy 89->99, speed 97->75, shoot speed (range) 85->99, weight 1.25->0.3 difficulty changed 7->5, price 1650->100
+- Darkwood Bow accuracy 94->93, removed merchandise flag, CKO unlockable by unique spawn
+- Hawkstorm Bow speed 87->90, shoot speed 76->75
+- Ebon Bow accuracy 91->92, speed 90->85
+- Melitine Army Bow shoot speed 80->82
+- Hornbow speed 85->87
+- maiden crossbow 1665->2200, abundance 2->3
+- singalian_arrows 160->400
+- dshar_elite_arrows 1200->1300
+- melitine arrows 200->750
+- melitine arrows2 300->680
+- long throw spear 1251->1100, ammo 1->5, difficulty 4 (max, due to problem with accuracy)
+- thrown axes - speed 18->24, quantity 4->up to 8, bonus against shields
+6. ARMORS
+- Noldor Ancient Plate weight 21->22
+- Noldor Noble Armor weight 19->21
+- Noldor Rune Armor weight 22->19
+- Noldor Female Armor weight 10->14, diff 21->25
+- Noldor Archer Garb diff 30-> 21
+- Mystical Rune Plate armor 3/69/27->2/62/22, diff 31->25, value 35k->25k; removed from shops, set to unique, given to Noldor lords: Aeldarian, Ithilrandir and Sadren
+- Doomguide Leather removed merchandise flag, CKO unlockable by unique spawn
+- Demonskin CKO unlockable by unique spawn
+- Eagle_Breastplate_Over_Mail armor 0/+2/+2, abundance 35->30, price 4400->5750
+- Blue Rampant Lion Surcoat armor 0/+10/0, weight 18->22, abundance 100->30, price 1448->3100
+- Blue & White Long Mail Surcoat armor 0/+2/-1, weight 23->21, abundance 100->10, price 2300->2900
+- Imperial Radiant Plate weight 24->26
+- Phoenix Plate removed merchandise flag, CKO unlockable by unique spawn, weight 26->24
+- Singalian Black Studded Leather 1782->5600
+- Scorpion Armor 7123->5500
+- Assassin Sophisticated Armor value 3900->4700, weight 24->22, abundance 10->5 body armor 20->51, leg armor 15->14, diff 12->15
+- Hauberk Silver Mail weight 23->21
+- Silvermist Plate 21->24, value 8000-> 6200
+- Wolf Armor 6015->4600
+- hera_brig_plate_black 4107->9587, abundance 30->3, renamed to Heraldic Elite Brigandine
+- plate_mail_polished - 4300->4800, weight 25->22
+- Melitine Lamellar Armor 44->46, value 1800->2400
+- Melitine Lancer Lamellar Armor 48/12->50/14, value 2750->4000
+- Mail & Leather Archer Hauberk armor +5/+6, value 1500->3500
+- Dark Blue Surcoat armor -7/-2, weight 18->21, diff 9->8, abundance 10->50, value 7300->3800
+- Scarlet Nomad Robe body armor +4, weight 15->14, diff 6->8, value 750->1100
+- Lion Squire's Surcoat armor +7/+1, value 2400->5000
+- Griffon Surcoat on Mail armor -1/+4, diff 8->10, value 3400->3900
+- Blue & White Eagle on Mail armor 38->45, value 1500->2200
+- Three Lions Mail & Surcoat armor 38->43, value 1400->1900
+- Red Surcoat on Fine Mail armor 38->44, value 1400->2000
+7. HELMETS
+- all 6 crown helmets have the same stats and price (1000)
+- sallet_closed 1585->1710
+- both Eventide Helms body armor 6->4
+- few items received +1 to body armor
+- Melitine Helmet 38->42, value 300->520
+- Melitine Bronze Mask value 1800->2000
+- all hoods weight to 0.5, armor 10/11->6/8 (except Pilgrim Hood)
+- Assassin Hood head armor 50->51, body armor 1->2, value 1150->1450, abundance 10->5
+- Phoenix Barbutte head armor 45->52, body armor 0->1, value 650->1500, diff 9->11
+8. GLOVES
+- each pair of gloves is different (visually or stats wise)
+- Noldor leather gloves weight 0.8->0.3
+- dark_leather_gloves 670->850
+9. HORSES
+- removed "strong" modifier from Noldor horses
+- swapped meshes between Phoenix Draped Warhorse and Phoenix Steed
+- Phoenix Draped Warhorse armor 52->44, damage 21->23, speed 39->42, abundance 40->20, value 1350->1450
+- swapped names between Griffon Steed and Griffon Warhorse:
+-- Griffon Steed armor 50->54, value 1550->1650
+-- Griffon Warhorse armor 50->46, value 1620->1450
+10. MISC
+- Heretics and Snake books 100->500 (should be higher in loot)
+- noldor_goods and loot prices 3000->5000
+- Soft Soled Ornate Greaves 32->35, value 1400->2400
+- added modifiers to some items without any (e.g. Cudgel, Falchion)
+11. SET AS MERCHANDISE
+- Blue Rampant Lion Surcoat
+- Long_Hafted_Knobbed_Mace 
+- Spiked_Club 
+- Desert_War_Axe
+- Plate_Covered_Round_Shield
+- Leather_Covered_Round_Shield
+- Heater_Shield_-_de_Fleur_Adventure_Company
+- Heater_Shield_-_Order_of_the_Raven_Spear
+- Heater_Shield_-_Order_of_the_Wyvern
+- Scorpion_Round_Shield
+- Hide_Covered_Round_Shield
+- Fur_Covered_Shield
+- Engraved Serpent Shield
+- Snake Cult Shield
+- Heater Shield - Eyegrim Shield
+
+
+"NOTES/KNOWN ISSUES"
+1. Right mouse click on any warband or fief on the world map may be useful
+2. soldiers on the battlefield may not follow player's orders; try in this order: 
+- reselect group
+- use tactical map to give orders (Backspace)
+- press U to disassemble formations
+- disable advanced formations in CAMP->POP Options
+3. After issuing order "use only blunt weapon":
+- mounted units not initially equipped with such weapon will stay in one place - are able to e.g. follow player or go to point on the minimap, but not charge)
+- while this order is active, soldiers without blunt weapon will be periodically re-equipping non-blunt one 
+4. Quest "rescue prisoner" - rare Native bug - lord, which player is about to rescue, attacks player - restart game session
+5. After CKO's item upgrade, player is not able to leave castle interior using entrance doors - need to press "leave" key instead
+6. During some sieges some attacking archers do not return fire
+7. In inventory (only) small bits of some items (e.g. ends of red feathers on a Steel Sallet) are white
+8. Tourney Armors in the cheat menu are transparent - unused, but hardcoded items; can't be removed, but both mesh and texture were reduced to minimum
+9. Some troops names are made up (e.g. words from two different languages are merged together)
+
+
+"CREDITS"
+Cozur (ACOK resources)
+Jun Yue (君悦) (AI scripts: "lancer fix", "enhanced horse archers AI")
+Dusk Voyager (script CKO equip all items from inventory)
+ha3481 (new mountain texture)
+Lucky Lancer (Training scenes)
+Ohagi-junT ("PoP Adaptation files for Prophesy of Pendor3.7063")
+Leonion (texture "Overhaul of weapons2.dds - 2k HiRes")
+Necturus (scene items)
+Fire&Blood (corrected AI mesh pathfinding on some castle siege scenes - used as a base for further sieges improvements)

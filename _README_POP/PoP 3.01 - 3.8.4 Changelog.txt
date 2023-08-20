@@ -1,0 +1,722 @@
+------------------------
+WSE (Warband Script Extender) is NOT compatible with PoP
+------------------------
+For best performances, play with "load textures on demand" turned off.
+------------------------
+
+
+v3.8.4
+
+Changelog:
+-Added a tweak that makes soldiers on horses switch to 1 handed weapons when needed
+-Fixed invisible bear helmet
+-Fixed infinite escape music
+-Fixed some menu images size
+-Fixed Fierdsvain berserker armor/body
+-Fixed Wolfbode's body and head
+-Improved Jarl Helmet
+-Removed azure plate from Heroines Adventurers
+-Few spear adjustments
+
+v3.8.3
+
+Changelog:
+-Added customizable reinforcement waves (siege and normal battles separately)
+-Added overhead stabbing for spears & crouching from submod by Hoboistice, also adapting units and spears.
+-Fixed double wife bug
+-Fixed the relation boost bug when freeing ladies-in-waiting
+-Fixed Quigfen's shop
+-Music now loops correctly
+-Tavern ambiance is now a sound instead of a music track
+-Changed cheats
+-Fixed Al-Aziz' crazy dialogs
+-Raised lords base revenue from 750 to 1000
+-Fixed parties potentially stuck near Kwynn
+-Fixed the teleporting training ground
+-Improved male body
+-Improved a lot of axes textures
+-Improved some door textures and some clothing textures
+-Gave phoenixes and scorpion swords a new model
+-Fixed castle floor shader
+-Removed oldest female arena fighters
+-Changed stats for Viper Sabre & Phoenix Sword
+-Fixed Leonion tweak 3.2
+-Fixed an animation with staff block
+-Bolts/arrows auto-equip: damage now more important than number
+-Fixed a text error with travelers
+-Fixed a price error in a dialog
+-Fixed an error with dismounting order
+-Improved skinning and optimized here and there
+-Corrected Empire Guardian Plate With Cape weight
+-Fixed (hopefully) trainers/ransom brokers in prison/feast
+-Fixed "tweak 38", where you would sometimes get a relation boost with all your companions after a victory.
+-Grammar corrections
+
+v3.8.2
+
+Changelog:
+-Fixed prison break
+-Fixed mercenaries turning into sellswords during the merchant quest
+-Fixed companions who would gain relation boost after a battle without being lords
+-Fixed Mystmountain tribes which would be counted as Mystmountain raiders
+-Removed victory condition about "befriending Mystmountain"
+-Fixed village battles loot (native bug)
+-Fixed village battles killcount
+-Fixed sally in Ishkoman
+-Fixed 0 soldiers parties
+-Fixed companion re-appearing when asked to stay out of fighting and go gather right to rule
+-Rebalanced new KHOs
+-Removed dialog about fief exchange, which would appear in the wrong context (and bug)
+-Reworked lighting and shaders in taverns (especially with flickering light)
+-Arena and tournament music changed (replaced by native music)
+-Tavern sounds changed
+-Fixed looted village music, as well as a few others, that were made to continue until end of track
+-Added loot to Elacrai
+-Removed dark skinned women from non-D'Shar arenas
+-Buffed Three Seers patrols
+-Fixed scabbards on some swords
+-Fixed beard on Assassin helmet
+-Fixed Fierdsvain Jarl Helmet
+-Fixed bald Kidnapped Girl
+-Bumped Veccavia Queen's Guard riding skill
+-Removed blue greaves from Shadow Legion
+-Re-added tweak 44 (a line about factions' current marshals to faction notes)
+-Improved a few textures
+-Added model to replace 2 noble clothing
+-Modified chest loot in several towns
+-Made the Upgrade Discount 90% instead of 33% (to encourage gradual upgrade of CKO equipment, 90% of time and cost invested in the current item is recovered and accounted towards the new item)
+
+v3.8.1
+
+Changelog:
+-Reverted aristocracy code
+-Fixed D'Shar ladies faces
+-Debug message in loot screen, and scrambled loot
+-Shiny horses
+-Bugged tavern dialog with drunken fight
+-Viper sabre width (fixed by K0nr@d)
+-Some clipping helmets
+-Scabbard for viper sabre, scorpion sword and wolf sword
+-Tournament items in shops
+-FLC's lance texture
+-Crassus not having a silk garnet anymore
+-Lethaldiran not reverted to being a man, to avoid being referred as "she"
+-Removed sallet from Immortals
+-Tweaked reinforcement waves
+-Put back inventory chest in 550 maps.
+-Phoenix and Wolf orders are given to one castle only.
+
+
+
+
+
+
+
+
+v3.8:
+
+TL;DR, Bigger battles, 3 new Knighthood orders, D'Shar troops overhaul, armor, gear and clothing overhaul, weapons overhaul, horses overhaul, tavern overhaul, scenes overhaul, map overhaul, banners overhaul, menu illustrations overhaul, factions balance, items balance, units balance, many new items, arena overhaul, woman playthrough overhaul, sound mastering, new sounds, many optimization, enhancements, and bug fixes.
+
+GAMEPLAY
+-Larger and adaptive battlefield size
+-Battle size ranging from 100 to 450
+-Many more reinforcement waves
+-Revamped D'shar troop tree
+-Factions rebalanced
+-Many units rebalanced
+-New Phoenix order (2 units)
+-New Shadow Wolves order (2 units)
+-New Scorpion Assassins order (2 units)
+-Leonion Tweaks from this list (1, 3.1, 3.2, 4, 5, 11, 20, 25, 26, 28, 29, 30, 32, 33, 35, 38, 40, 42, 43, 44)
+-All item prices normalized (based on K0nr@d's algorithm)
+-New helmets, new boots, new bolts, new bows, new arrows, new horses...
+-Most units individually reworked and balanced
+-Dragon Drakes now update from Ravenstern Men-at-Arms
+-Items too rare made more present
+-Ai defenders and defending player get ammo refills on sieges
+-New system for merchants to get money
+-Honor decrease when attacking villages & caravans
+-Updated killcam
+-New options & political map
+-Companions won't loot gender opposite armors
+-Wage of archer horsemen no more higher than horsemen
+-Wage of mercenaries down from 200% to 166%
+-Companions can auto-equip, even if loot is saturated
+
+SCENES
+-Adaptive battlefields (1, 5 or 12 times the surface)
+-New Elacrai interior, exterior, arena and training
+-New siege scenes for 14 towns and most castles (from Floris, but reworked)
+-Horizon backgrounds and map borders
+-More animation in taverns, with up to 15 random customers, musicians, rush hours, and varied clothing linked to culture
+-New Sarleon tavern
+-Spawn points reworked in arenas & taverns
+-Town scenes edited (river in Torbah, towers in Sarleon, lighthouse in Nal Tar, textures in Empire cities and multiple other tweaks)
+-Nal Tar scenes replaced by Sarranid's Durquba
+-New skyboxes
+-More lords in feasts
+-Women in arenas.
+
+VISUALS
+-New and reworked armors
+-New and reworked helmets
+-New and reworked weapons
+-New and reworked horses
+-New and reworked greaves
+-New common clothing
+-Tournament items reviewed
+-All armors have a male AND female version (with exceptions)
+-All banners redone from scratch, HD
+-42 extra banners
+-Skinning of a lot of helmets (neck part deform with movement)
+-New book covers, qualis gem, gold bar, loot, lute, lyre, chests, common items, furniture, bodies, hair...
+-Dynamic face generation for zombies, and new textures
+-More blood
+-Bump map and/or specular map created for manu items
+-Higher grass
+-Fade from black on entering peaceful scenes (toggleable)
+
+MAP
+-Original individual icons for towns (including Elacrai)
+-Individual icons for castles (from Floris)
+-Banners normalized
+-Corrected bridges
+-New map icon for training grounds and Wolfbode
+-Polished map textures and shape
+
+FACES OVERHAUL
+-New male head shape
+-All NPC reworked
+-More and better textures
+-More wrinkled old faces
+-Darker D'Shars
+-Noldor faces
+-Better random faces
+-Head and body color match
+-All D'shars are now dark skinned
+-Muscular bodies in arena
+-Dynamically generated zombie faces
+-Zombie texture redone
+-Improved woman model
+
+UI
+-More than 150 new menu illustrations (unique illustrations for towns, factions, events and menus)
+-Interface tweaks
+-New kill counter
+-Some polished menus
+
+SOUNDS
+-New female grunts
+-New death sounds for demons
+-Sound reviewed/remastered
+-Musicians in taverns
+-Women can shout orders
+
+OPTIMIZATION
+-Optimized sounds (split into OGG and FLAC depending on use)
+-Mesh simplifications
+-Texture remapping for economy
+-LOD creation for almost all items
+-Elimination of all old unoptimized assets
+-Mipmaps on all textures to avoid visual noise
+-Removal of alpha layers when not needed
+-Behind the scenes rework (sorted .brf files and sorted items order)
+
+BUG FIXES
+-Thousands of grammar, punctuation and formulation errors
+-Merchant starting choice was always changed to physician in scenario "a letter that changed everything"
+-Made CKO Sergeants recruitable from prisoners
+-Fixed exploit with UllrVetr's bow
+-Salt mine scene exit
+-Transparent salt mine
+-Duplicate items
+-Misaligned Banner of Sarleon
+-Misaligned Mett Xbow
+-"Ghoul face" in castles
+-Possessed Doomguide face
+-Helmets not fitting the head
+-Removed some non-interactive doors
+-Hair texture
+-Banners on overhead circle misaligned
+-Arena and tournament fighters don't keep their original greaves
+-Party naming bug
+-Removed ladies in waiting from non-player parties
+-Fixed "pretty female" face
+-Toned down loot on bandits
+-Fixed shader on many items
+-Fixed color on back of heraldic armors
+
+
+
+-------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+Note: Prophesy of Pendor v3.7063 works only with Mount and Blade: Warband version 1.153 and greater (i.e. it is not compatible with 1.143 or lower versions)
+Note 2: Don't run WSE with PoP, it may corrupt the lords' family relations at game start!
+
+3.7063 Features and Improvements (NOT save compatible):
+ 
+
+!! NEW FEATURE Updated map and town/castle/village locations
+!! NEW FEATURE added lady in waiting troop/events (talk to this troop type if they are in your party).
+!! NEW FEATURE Vastly Improved starting options with story arc that has game reprocussions.  
+          Rumor refresh rate
+          jobs for bards and healers
+          background NPC's that spawn based upon character choices.
+!! NEW graphical interface
+!! NEW artwork for armors and weapons
+!! NEW Troops and weapons
+!! NEW Healer jobs from Travelers - income and renown  
+!! New Bard Jobs from Innkeepers - income and party Morale for Bards (keep that lute in your possessions).
+!! NEW major spawn -  ( - Spawn of Azi Dahaka) 
+!! NEW Renegade Specialty spawns -  added 25+ personality spawns that fit into the lore..
+!! NEW Two dozen Map Icons added that better reflects the type of NPC party.
+!! NEW Additional Music Tracks 
+!! NEW Change custom Knighthood Order can be changed to be all Female.
+!! NEW Creating Knighthood orders can cause negative relations with other orders. The lore matters..
+!! NEW Expanded use of Qualis Gems
+Improved pendor line of troops
+Improved Mercenary line of troops.. top tier is Mercenary Sergeant.
+Modified fierdsvain berserker troops - visually and their abilities.
+Modified empire line of troops
+Modified bandit spawns to provide more variance
+Modified vanskery spawns to provide more variance and challenge (not harder.. just different..ok. .a few are harder)
+Modified many spawns and troops to increase variance and challenge  (Bloodsword Witches, Iron Circle Knights, Red Fletchers, Northgard Rangers, Possessed Doomgards)
+Balanced out faction spawn rates for greater variation
+Updated stats on weapons and armors
+Updated factional relations
+Created new Jatu Troops and implemented upgrade path with Jatu mercs
+Modified and increased the types of troops you can obtain from Red Brotherood Tavern Slavers.
+Deity events now have both benefits and consequences ..depending.
+Implemented procedural system to create a few established knighthood orders in towns and castles.
+Knighthood order Knights skills and equipment modified
+CKO sergeants prestige cost lowered
+CKO sergeants  training made slightly less efficient.
+Modified the easter egg qualis gem gambling results.
+Reduced amount of troops for Knighthood renown quest
+new face codes for many companions.
+
+
+
+3.61 Bugfixes
+- Fixed: Hold-F1 doesn't work in bandit battles
+- Fixed: Can't reinforce militia patrols, dialog simply exits
+- Fixed: Lords don't reinforce when told to switch culture
+- Fixed: Militia patrols chasing the player don't attack
+- Fixed: Can't send companions on RTR missions because of companions on order training missions
+- Fixed: No RTR gain for peace as a vassal.
+- Fixed: GM quest snake ambush: if won and you don't tab out in a minute it won't start the quest.
+- Disabled ranks for player custom order.
+- Disabled suggestion to lord to attack the Snake Cult Stronghold
+- Fixed: auto-equip for all companions exploit to prevent getting at Leth's items
+- Whenever the player changes culture, the gender of the player custom Order is suitably changed too; for 3.6 games with gender problems just go to the rename Order screen.
+- Take out the Strange Rune bow once Wolfbode is beaten when the bow is given to a companion or stored in a chest.
+- Player mercenaries removed if the player becomes vassal.
+- Player mercenaries won't enter a center that was lost after they were told to go there, they will resume following the player.
+- Fixed Native exploit with lending companion to a lord, then looking at the companion report to make him rejoin immediately.
+- Player mercenaries can't be rehired immediately after a defeat. Two weeks of cooldown, just as for dismissals.
+- Dialogs with own mercs in foreign castles, just in case and for 3.6 games - should never happen with the new 3.61 fixes.
+- Fixed Native bug with booksellers temporarily disappearing if they were set to be in the same tavern.
+- Fixed unique NPCs spawning freely when they are player's prisoners
+- Spawn secondary patrols actually patrol around the primary spawn and are not simply dropped off along the way
+- Mercs and war parties now join player sieges when he's not a marshal
+- Fixed getting RTR for peace after a war you were not involved in.
+- Pretenders turned kings can be ransomed now.
+- Game quits with an error message if it can't generate family relations at game start due to outside tampering with troops (or possibly using WSE).
+- Correct shorter length of Melitine spears.
+
+
+3.61 tweaks and improvements
+- Player order equipment replacement: cost and time discount (a third of the old ones) based on the replaced item
+- Decreased rate of minor faction siege attacks
+- Increased rate of founding minor orders; increased rate of Kings founding unestablished orders
+- Minor order knights become household troops for founding lords that have none
+- Ursula gets Knights of the Falcon as her household troops. (needs a new game)
+- Pop-up when there's a surprise siege attack on a player fief or player kingdom fief (not just after it was sacked)
+- Lutes and lyres available (as shields) for custom Order when all poems are learned
+- Added a steward dialog to store all the troops in the garrison (except prisoners and companions)
+- More Noldor item unlocks for your custom order.
+- Order challenge quest: lowered the number of Order troops given, and disabled giving them to your lords, garrisons and militia.
+
+
+PoP 3.6 changes (not save game compatible with previous versions):
+- Player Knighthood Order
+- Player king mercenary parties from different factions
+- The Melitine Empire: a new minor faction
+- New unique spawns from foreign factions (Mettenheim, Veccavia, Barclay, Melitine)
+- Order ranks and stronghold
+- New Order quests (tournament, challenge, rivalry, GM quest)
+- Randomly generated minor knighthood Orders; sometimes created by lords
+- Numerous new Order, Noldor and other map dialogs
+- Prettier female faces (corprus OSP)
+- Large minor faction spawns sometimes siege and sack nearby towns.
+- Order war parties of the main kingdom Orders sometimes spawn and actively assist their kingdom
+- Kings sometimes found Orders if they don't have a chapterhouse yet
+- Recruiting Order Sergeants similar to recruiting Order Knights
+- Liege lord troops culture switchable to the player's kingdom culture through a dialog.
+- Can give troops to your kingdom or your village militias (if they have <100 troops)
+- Traveler NPCs in taverns give locations of the two booksellers.
+- Sell all prisoners dialog
+- Ramun gives locations of random unhired companions if you sell him slaves
+- Talk to Guildmaster menu option for towns
+- Order and minor factions relations report within the faction relation report
+- Ability to rename your party and Order (Camp->Take action)
+- Heretics and Snakes drop books that are useful to Orders (membership required)
+- Siege defense: inventory chest at defender spawn point (to refill ammo and change gear)
+- Camp menu: review and drill your troops
+- Renown costs for Order knights increased a lot and depend on relations as well as honor
+- Updated Order factions hostility matrix
+- No more instaloss with Scorpion Assassin ambushes. Only one or two spawned.
+- Valkyries' axes were too short, they got a better weapon.
+- Get -2 RTR if attacking during a truce
+- Removed horses from D'Shar Bowmen and Dervishes
+- Changed Elixirs to give half the stats bonuses from the 4th use onwards
+- Order bounty quest quota tweaked down
+- Spawn small Noldor patrols more frequently (now in line with other minor factions, every 33 hours)
+- Tweaked up the endgame low spawning rates of Mysts and Heretics
+- Limited generated Order knights and sergeants in garrisons to about 30 and 50 - there were too many in the end game
+- Leth doesn't let you see his equipment until you are level 30
+- Get less payment as a kingdom merc, it was too exploitable.
+- Nerfed a notch the Fierds party sizes
+- Small increase to rare spawn spawning rates (since they get mobbed by kingdoms too often)
+- Bugfix: Order sergeants had autocalc values of 0
+- Bugfix: (Native bug) Companion missions lasted half the time advertised
+- Bugfix: (Native bug) Loaned companions (quest) disappeared if the lender lord disappeared
+- Bugfix: The trading villagers (quest) would rarely turn into an ordinary villager party
+- Bugfix: (Native bug) Gained 3x3 RTR instead of 3 for peace, and 0 RTR instead of 15 for marriage
+- Bugfix: Fixed Notes and other headings positions
+- Bugfix: Wolfbode now counts towards Myst supression
+
+
+PoP3.51 July 24 Changes (save game compatible with 3.5+ save games):
+- Changed disguise (uses lute and dagger and no staff)
+- Made the recruit troop for Lady Falcons be the Noble Maiden (lvl40) (upgrade from Maiden Adventurer, with stats and equipment comparable to the Pendor Knight).
+- Maiden adventurer was lowered to level 33 (from 40) but is still a bit better than the adventurer.
+- Heroine adventurer buffed a little to accommodate the longer training/upgrade time
+- Fixed empire_knights and ghilmen to be flagged as mounted
+- Ornate Leather boots is now using leather prefixes instead of metal prefixes
+- Silvered Rune Axe has been buffed (to match its price better)
+- Falcon Knights and Shadow Legion Centurions cost double prestige points compared to other orders
+- Female adventuring companies and Meregan's adventurers have been slightly modified to include Maiden Nobles
+- Resource savings in the form of modifying the dialogues so that all dialogue sounds are streaming from hdd.
+-Graphics updates by Four Leaf Clover (9 items have been spiffed up!)
+
+
+PoP3.51 Changes (save game compatible with 3.5 save games):
+- Music optimizations to lower file size (thanks to Nullpat)
+- Sound tweaking for better sounds (thanks to Nullpat & Felix)
+- Extra music tracks (thanks to Felix Thievant)
+- Removed killcounter from village raid missions
+- Fixed typo with black hourglass gloves and one other typo mentioning Rhodoks
+- Renamed a dds file that was using an umlauted 'u' ('ü') to avoid conflicts with some systems
+- Updated Credits
+- Added some brf optimizations (thanks to Somebody)
+- Increased chances of spawning order squires (as members of order parties and in centers with the order building) and increased chance to gain them as reward too (slightly).
+- Cav VI tweak.
+- Fixed refugees map encounter so that the party exchange window appears if they are willing to join.
+-Tanneries cost 12k to build (used to cost 8k).
+- Item stats polishing (thanks Noosers)
+
+
+
+
+PoP3.5 is NOT save game compatible with any previous PoP versions
+- Updated PoP3 to be compliant with WB 1.153
+- Vicky has been updated (Vicky = the battle VI)
+- Fixed menu sound click volume, royal weapon potential issue, Maltise and Boris respawn issue (returning from banishment), certain sounds not playing, and more.
+- Added fixes for some TW bugs and new PoP tweaks to enhance standard gameplay.
+- Upgraded sound files to better quality .flac format. Thanks to Nullpat!
+- Made the treasure lair message a log message.
+- Added three quests written by Mad Vader! Thanks MV!
+- Introduced new squire troops (for each knighthood order).
+- The new squire troops may also show up in towns/castles that have a knighthood order built.
+- Added a "fast skip" dialog response ("Ah, I know of your sort already. No need to tell me who you are") when encountering ransom brokers.
+- Household troop changes:
+- Mansour Bey got Ghilmen [tier 7] instead of D'Shar outlaw chieftains [tier 5]
+- Kalandar Khan got Dustriders [tier 7] instead of Singalian Horsemen [tier 5]
+- Lord Inar Hairybreeks got Einherjar [t7] instead of Red Brotherhood guildsmen [t7]
+- Livius Dux got Shadow Marinae [t7] instead of Jatu Mercenaries [t7]
+- Count Arnoldus got Dragon Drakes [t7] instead of Kierguards [t6.5]
+- Ulric gets Lion Squires in addition to his Lion Knights
+- Gregory gets Dragon Drakes in addition to his Dragon Knights
+- Bahadur Khan gets Dustriders in addition to his Windriders
+- Valdis gets Einherjare in additon to his Valdis Huscarls
+- Marius gets Mortals in addition to his Guardian Knights
+- Boris the Raven gets Ravenspear Mercenaries in addition to his other troops
+- Syla Uzas gets Shadow Marinae in addition to her other troops
+- Hostile order troop(s) may show up in taverns in assassin fights
+- Ravenstern Kierguard Knights (Duke Alaric's household troops) are now Ravenstern Highlanders (with new looks)
+- For 300k gold, the player will get an option to change culture (speak to minister).
+- Duskfall -- new unique item can be found with a certain hero.
+- New mercenary unit available: Mercenary Highlanders.
+- Wolfbode the Slayer now does justice to his nickname ...
+- Clarion Call Rangers are now recruited from Sarleon Knights (- before they were recruited from Pendor Knights) and their chapter house can be built if the player embraces the Sarleon culture.
+- Lion Knighood chapter house can now be built also when the player embrases the Sarleon chapter (no longer restricted to just being a Sarelon vassal or owning the capital Sarleon).
+- Likewise; Dragon Knights, Lady Valkyries, Immortals, Windriders now also can be built if the player embraces their respective cultures.
+- Falcon knights are now female knights.
+- A hint is given when you talk to defeated lords (regarding the chances you have of having them join you).
+- Siege retreats incur a small controversy increase for the player (- and if the player is a liege then his vassals have a 20% chance for each vassal lord of getting a small relationship hit too). The old penalties also apply.
+- Overhauled and reworked troop armors, equipment balancing and item adjustments.
+- Faction re-balance (mainly to strengthen Sarleon and to a lesser extent D'Shar).
+- More than 60 new items (a few are not for the player).
+- Resource optimization to allow as many systems as possible to run without any issues.
+- Alistair, Roland and Rayne have special troop additions when being lords.
+
+3.42 Save game compatible with PoP 3.411
+- Adjusted the following shields' sizes: Anaconda Shield, Netherworld Shield, Ancient Engraved Shield.
+- Made the Empire Princeps Armor available in armor stores (low abundance).
+- Wages for ranged troops with lvl30 or higher has been increased by 33%.
+- More re-balancing of trade good items.
+- Agressiveness and Initiative for lords following another lord have been increased.
+- The formula for getting a fief when asking for it for player vassals has been modified. Now it caps the player's renown to about 1300 to 1700 when the player asks for a center he/she captured. If the player didn't capture the center then the player renown is capped at 1000 to 1400. This makes it so that other lords will be getting centers if the player already has some centers, despite the player having a lot of renown. It also makes it possible for the player to revolt more often and prevents the player from growing too powerful when being a vassal. Other factors that will decrease the capped value are: Player Right-to-Rule and Player Controversy (- both of these are subtracted from the cap value to lower the capped value).
+- Fixed a native issue in dialogs when talking about replacing marshals.
+- Reworked lairs. They now get reinforced with boss troops too. The boss troops are strong. The Red brotherhood lair (aka treasure map location) now has guildsmen as regular troops. The Snake Cult shrines have snake cult armsmen as regular troops. This also makes the initial rescue mission a bit harder because the boss troops there are also affected. The starting merchant will recommend you to hire some troops with experience and good equipment. The boss troop change needs a new game to take effect but they won't mess up anything in your current save game so it is save game compatible. The new bosses also bring in new loot with them.
+- Tournament equipment: Daggers are now replaced with clubs for archers (foot and mounted). The lance wielders and javelineers are now equipped with clubs as secondary weapons.
+- Fixed a bug in the Ghost lady quest.
+- Updated graphics resources with the work of Four_Leaf_Clover: This improves a large number of items' reflections to be less glossy and to be more optimized.
+
+3.411 Not Savegame compatible with 3.41
+- Fixed Red Brotherhood chest.
+- Reverted Kill counter to not being continuous (to reduce potential lag). Use minimap on/off to get the kill counter to display if it does not.
+- Changed the economy to PoP3.4 (and fixed missing items that would occur in WB 1.143). This causes save game incompatibility with PoP3.41.
+- Changed Pendor Cavalry from level 30 to level 20 (to fix upgrade issue).
+- Removed defeating Noldor lords from victory conditions (- now you can win while the Noldor Lords are on the map).
+- Increased bulk item purchases penalties a little (and the same for selling bulk of the same kind).
+- Rebalanced how merchants stock their inventories, especially goods merchants.
+- Fixed Red Brotherhood to sometimes offer Bearclaw Berserkers.
+- Fixed the requirements of a certain bow.
+- Adjusted the cost of the mill and brewery enterprises.
+- Removed player supporter faction restriction on certain new items like Ebony weapons, Ranger armor, etc.
+- Cavalry in other groups than the default cavalry group are now also affected by the initial mount order (to counter game engine's dismount order).
+- Rebalanced noble recruits generation a bit (it will cap out a bit more so you don't get exceedingly many per week).
+- Relationship needed for lords to join is now:
+Relationship needed for lord to want to join = 15 + campaign difficulty modifier (5 for medium and 10 for hard) - player persuasion skill + lord type (10 if duke and 0 otherwise) + number of castles for the lord's faction + (2 * number of towns for the lord's faction) - min(number of Pendor castles,5) - min(number of Pendor Towns,3)
+
+
+3.41 NOT SAVEGAME COMPATIBLE with 3.4
+- Ported to Warband version 1.143 and included all fixes and new achievements that it includes (adapted to PoP where needed).
+- Fixed Maiden Ranger having lower skill in archery than crossbows.
+- Fixed a village issue that existed when a lord joins your faction but fails to bring over his holdings.
+- Fixed Melitine Lancers not using their lances.
+- Fixed units not switching from lances to melee correctly (when there are 3 nearby enemies).
+- Fixed Bearclaw shield being too abundant in loot after battling Mystmountain warriors and shamans.
+- It is now possible to gain the two unique items in the game (through dialog).
+- Fixed issue where companions promoted to lords/ladies would not wear their player assigned equipment.
+- Siege scene in Valonbray is fixed (by Abhuva).
+- Fixed the character menu report to report the correct prestige cost for honor troops.
+- Changed starting renown for companion promoted Lords/Ladies (lvl*28, capped at 1000).
+- Fixed the low cost of the Empire Old Shield (- this may need a new game to take effect).
+- Fixed an issue where a player could recruit troops higher than level 40 after a battle.
+- Talking to a lord at a feast when there is no host has been fixed.
+- 37 Lords have had their faces updated to unique and appropriate faces.
+- Heretic Magnus has had his bow and quiver replaced with throwing spears
+- Maiden Adventurer had a weapon switch out (bastard sword became Claymore).
+- Warhammers now have the same swing/thrust functions as Polehammers.
+- If the player is betrothed he will not get any orders to join the army (if he's a vassal) until he's married or ends the engagement.
+- Added a PoP game menu option where you can make it so lords can never bring over their holdings to your faction if you turn this option on.
+- Fixed a duplicate banner issue (Caliph Hamid and Sidonius Legatus).
+- Modified sally forth ammo script to trigger with a small delay (- before it could trigger too early).
+- Fixed lance switching to keep drawn bows.
+- Horse merchants get 5 to 10 horses every week (the other merchants have also been updated to comply with WB patch 1.143).
+- Fixed the no parry issue with ravenstern battleaxe and knight war axe.
+- Reworked ghost lady quest to no longer use a random lady as mistress (- now it is a new lady named Morwena). (Thanks MV for advice!)
+- Ghost lady and mistress will only appear if there is no feast ongoing in the quest target castle. Plus various other small fixes.
+- Reworked some items regarding different aspects such as price, requirements, etc.
+- The kill counter will no longer stay invisible after using the Esc key or opening the battle chest.
+- Sarleon Armored footman has been given a morningstar instead of warhammer (- due to these soldiers always knocking out enemies because of their previous blunt weapon).
+- Lords joining the player via relationship has been reworked. Before they would join if their relationship was 20 or greater. Now it is according to this formula: 
+  Relationship needed for lord to want to join = 15 + campaign difficulty modifier (5 for medium and 10 for hard) - player persuasion skill + lord type (10 if duke and 0 otherwise) + number of castles for the lord's faction + (2 * number of towns for the lord's faction)
+- Snake cult lairs are guarded by snake cult armsmen instead of snake cult followers now.
+- Honorable lords do not gain as much bonus from player honor as they used to get.
+- Tournaments can only be entered if you have garnered some renown.
+- It is possible to acquire more unique items now.
+- Defection has been reworked a bit (lords with fiefs gain bonus relations with their liege during convergence according to a small base value and bonus from fiefs. For lord convergences between each other the convergence is like before.
+
+
+
+3.4 (NOT SAVE GAME COMPATIBLE):
+- VI updates.
+- Raised training skills for lords and kings where needed. Raised AI Tactics skills in general.
+- Nuanced troops and companions (they used to have the same proficiency in all weapons, now they don't). For example ranged troops are often less skilled in melee.
+- Increased morale modifiers for leadership (20%/25%) and food (100%).
+- Reworked routing to scale better and to take longer to occur.
+- Included option to turn off routing completely.
+- Starting troop slots lowered by 20.
+- Attacker siege retreats penalized by 20 renown, 2 honor and 10 party morale.
+- Jatu raider and lancer have had horse upgrades to respectable horses.
+- A few horses that had no hitpoint declaration have been fixed. (thanks Hoellenbewohner)
+- A party template bug for Shalavan has been fixed. (thanks Hoellenbewohner)
+- No horses for anyone in village lord raids (before only the enemy AI had no horses).
+- Lord parties who are accompanying another party are a bit more courageous than before (they don't flee as easily).
+- Added Caba'Drin's Dynamic Groups code (thanks Caba'Drin!)
+- Jatu armies reduced in numeric strength slightly (because their raiders and lancers are harder to beat now).
+- Two additional Sarleon Barons have received household troops.
+- Jatu Hunter resurrected from the dead.
+- Small fixes for typos and minor changes.
+- Fixed an issue with the Archer Defender Siege AI.
+- New Weapons, shields and armors have been introduced (and a few weapons gave been re-introduced).
+- Patrol radius for small knight groups and patrols have been tightened so they patrol their area better.
+- The steward now recruits from all bound villages (not only the player owned bound villages). This is a bug fix.
+- The faction kings’ hired Mercenary parties have higher initiative values.
+- Lords no longer automatically bring over their holdings to the player faction when they change allegiance to the player faction. Instead it is based on several factors (where campaign difficulty, player persuasion, relation with lord and lord rank are deciding factors).
+- Honor gain and relation boost reduced when freeing captured lords.
+- Honor gained by winning tournaments.
+- Increased relation requirement for lords to be willing to join player faction when talked to from capture dialogue (from 7 to 20).
+- Increased size of Knighood Spawns (on map).
+- Honor troop training is now based on (250-Honor)/10 Prestige points per troop.Minimum prestige cost is still 2 and maximum is still 25.
+- Player loot share reduced (to its original setting).
+- Certain companions have certain troop affinities.
+- Valonbray has had scene upgrades made by Abhuva!
+- Reworked mercenary payment a bit (not as profitable as before).
+- A new tribe has joined the Mystmountains: The Bearclaw Berserkers! These highly agile berserkers in full Bearclaw Armor are rightfully feared in the North. While perhaps not as skilled as the Fierdsvein berserkers they are more agile and more armored and they wield big axes :) If you are lucky you may come across a few who might join your army.
+- Kings will not accept vasselage of players who have a relatively high right to rule.
+- A new mercenary unit known as the Melitine Mercenary Lancer has been seen in taverns ... it is rumoured to come from a far away place named Amala!
+
+
+
+Changes 3.302 (NOT SAVE GAME COMPATIBLE):
+- All sounds in the Sounds folder have been converted to wav format to improve performance and remove crashes
+- VI updated so that enemy leader will charge player when player is "close and scouting"
+- VI has been updated to send an automatic Mount order to cavalry at start to discourage dismounts.
+- Removed melee capability for javelin, thrown spear, jarid and broadhead spear. <- this improves AI usage but causes the save game to be not compatible, sorry.
+
+
+Changes 3.301 (save game compatible with 3.3):
+-Fixed companion as prisoner dialog missing (now ex-companions behave as normal kingdom lords when captured).
+-Fixed weapon graphics and weapon lengths.
+-Fixed the lods for white caparisoned horse.
+-Fixed Eventide Helm with Cape (was floating before).
+-Fixed Ithilrandir being killed to also affect Noldor relations negatively.
+-Reworked tax inefficiency a bit (larger base before penalty but a bit steeper penalty curve after that).
+-Updated a section of Cavalry VI to fix a passivity issue.
+
+Changes 3.3 (not save-game compatible with older versions):
+- Horse graphics updates (by wanderer949)
+- Armors graphics updates (by smokindog and Archangel2K -- mainly for PoP4)
+- Weapons graphics updates (by anonymous)
+- Restructuring of brf:s and textures.
+-Fixed OP Code error when companion is ransomed
+-Fixed dialog so it no longer offers a feast if in non-player owned centers (and the spouse is not the owner either).
+-Sound notification for nearby enemies only triggered by larger groups now (and only if they are close to player's holdings).
+-Fixed ghost lady to only select non-player husband lords.
+-Changed rav battle axe to be able to thrust and swing.
+-Removed village raid sound.
+-Fixed notification message bug (for other faction relations that are affected by certain events)
+-Fixed village banner issue
+-Fixed a blank dialog issue with Town mayors
+-Increased player_loot_share (doubled it)
+-Lowered maximum Looting skill at character generation (compensated with increases in other skills to match the loss)
+-Inserted Rubik's improved looting system (for higher quality loot)
+-Added Weaponmaster for: Ediz - 4, Kaverra - 3, Sigismund - 5
+-Fierdsvein nobility  who rode red warhorses now ride green warhorses and all Jarls are upgraded to these.
+-Fierdsvein Nobility that rode a hunter now ride a caparisoned green hunter
+-Noble Valkyries now ride Yellow Warhorses (instead of white warhorses)
+-Marleons Cavalry also ride Red Caparisoned hunter
+-Sarleon Knight can no longer ride Well Bred Hunters. Instead they can ride Caparisoned Red Hunters
+-Sarleon Lords that rode hunters now ride red caparisoned hunters
+-Ravenstern Lords that rode hunters now ride blue caparisoned hunters (count stephan rides a blue draped warhorse instead of a steppe horse)
+-A certain item's abundance changed from 80 to 0.
+-Reduced number of honor troops generated by reputation (and added a random element to it).
+-Reworked how quitting a rebellion functions (now all holdings will revert to original faction and all prisoners are released and player loses 5 honor instead of 20 honor).
+-Added sound notification for finished construction of buildings (in addition to the current text log notification).
+-Increased armor factor from 29 to 35 for all Caparisoned hunters (because other hunters cost less but have better stats).
+-VI: If there is Cav, then a mounted team leader will stay with them instead of infantry.
+-Field battle: When the player falls the troops are ordered to use any weapon and fire at will (in addition to charge).
+-Fixed descriptions of very prosperous villages and towns.
+-Added Feature: Building repairs (for AI and player) + AI building improvements.
+
+
+Changes in 3.205:
+- Fixed the ex-companion as player prisoner dialog bug.
+- Fixed potential issue with kingdom lords following a marshal.
+- Added Lance switching to battles (- Based on Caba'drin's Lance switching script!)
+- Reworked Sally v1.0 to Sally v1.1 (- she is smarter now and has a few new surprises in store)
+- Reworked initial payment offer for Player Mercenary Contracts and for the weekly contractual payments.
+- Fixed a potential issue with enemy leader being passive in formation battles (WIP).
+
+
+Changes in 3.204:
+- Fixed typo in dialog.
+- New "sally forth" formations feature (for all sieges).
+- Fixed "stuck lords" bug.
+- Fixed Marshal OP script error.
+- Fixed Slot OP script error spam (if player has assigned troops to slot 7 and has no troops assigned to slot 8)
+- Fixed loot division by 0 OP script error.
+- Adjusted training garrisons (WIP).
+- Dread Legion Infantry is now considered infantry.
+- If player is knocked unconscious in siege battles the player troops are set to charge ( - like the other kinds of battles already do
+
+
+New features:
+- Intelligent tactical VI (Vicky) and battle formations (see forum FAQ for details and keys)
+- A hidden outpost of a minor faction (no spoilers here!)
+- New intro quests
+- Treasure maps leading to hidden lairs
+- Gender equality: females get fiefs when invited to join a faction and don't have a hard time trying to get hired as mercs
+- Added reference pages under Notes->Game Concepts for buildings and knighthood orders
+- Cheater achievement rewritten (cheating three times will trigger it, and it doesn't disable other achievements, only their rewards)
+- Factionalized items (there are many faction-specific items that are available only in faction's town stores)
+- Auto-recruiting from bound villages (seneschal dialog) and auto-training (depends on seneschal Training skill) of player garrisons
+- Additional music tracks for battles and weddings
+- New voice sets for Diev, Sarleon and Empire lords 
+- Mouse-driven death camera
+- Additional game options "Important news only" (all or no messages about lords, lootings and sieges that don't concern your faction) and "Battle formations" (toggles both formations and the tactical AI on/off)
+- King-hired mercs escort the king as a separate party, they also enter and exit centers with the king, and drop off prisoners in centers
+- Added a message to notify when a fief is awarded
+- Integrated More Metal Sounds 2.2
+
+Changes from POP 3.01 and Warband:
+- New and updated items by Archangel
+- Updated scenes and additional item LODs by Sysyphe
+- Player kingdom management is Warband-style, with additional POP dialogs
+- The economy is a hybrid PoP/WB, with POP building improvements
+- Sarranids (6th kingdom) were removed, but their items are available in D'Shar stores
+- Bandit lairs populated with POP denizens
+- Additional companion dialogs and traits needed for Warband
+
+Selected tweaks:
+- Many troop and item stats were rebalanced
+- Prisoner Mgmt skill: lowered prisoners per point from 15 to 10
+- Map: moved several villages, so towns always have at least two of them
+- Adjusted spawning probabilities of minor factions to be more balanced (less Heretic armies, more Snake Warbands etc. - spawns should be more diverse now); added missing messages for 3 Seers, Eyegrim and Noldor lords spawning
+- Sorted most of the party templates (including kingdom reinforcements) to place stronger troops first (with some exceptions where strong troops appear at a later battle phase to make things interesting, like for Noldor Lords, Burilgi etc.)
+- AI garrisons sorted by troop level and real strength whenever they are reinforced or gain xp, archers biased by +25% (i.e. moved up), order troops moved down (-50%) so it's not impossible to siege an order town
+- Kingdom reinf. templates rewritten: more balance between kingdoms, kingdom parties get their Order troops like in 2.5
+- Tweaked down tax inefficiency
+- Disabled Warband renown reduction when renown is high
+- Halved speed of night fighting for every AI battle
+- Some Empire troops (Legionnaire, Noble Legionnaire Recruit, Gladiator, Immortal) changed to infantry, less spear-throwing (Empire parties autocalc values now more in line with the rest)
+- Siege AI updated to gauge prospects with POP autocalc (both while planning and while sieging) - i.e. AI more careful, likely to attack easier targets like castles and villages
+
+POP 3.01 bugs fixed:
+- More accurate heraldic armor back colors
+- Marleons Heavy Cavalry, Barclay Lancers now always have horses; Sheriff, Empire regular and Guardian Knights now have Riding skills
+- Fixed a bug that prevented Noldor Lords from spawning, except by rumor
+- Damaging already damaged improvements on capture/raid, caused repeated penalties or magical repair
+- Refugee party when invited to join gives wrong answers
+- Corrected building effects or description text for several buildings so they are consistent with each other
+- Map: wayward vertex near Valorshield moved - caused parties to get stuck
+- Map: flipped to face north
+
+Warband bugs fixed:
+- Removed a set of duplicate banners 
+- Fixed a WB bug that prevents the last prisoner troop of a certain type to escape (causing enormous prisoner lists in castles etc.)
+- Economy: WB bug fixed - symptoms were inflated prices and shortage of goods in stores; production of various goods rebalanced for POP (e.g. fish produced only in coastal villages and towns); boosted number of different goods in stores
+- Lords seem to defect to a single faction
+- Lords go on to siege castles recently captured by their own faction
+
+
+Have fun!
+The POP Dev Team
+
+
+Personal note from MadVader:
+Despite having plenty of fun porting and developing POP 3.2, I'm retiring from modding into real life. As the Gods of Pendor would usually have it, the right person showed up at the right time, so Treebeard will carry the coding torch from now on. I wish him and the POP team best of luck in creating the next release.
+I'd like to thank the excellent people on the POP Dev Team and the loyal POP fans for pushing POP to the next level. Special thanks to Saxondragon for showing me what game design is about.
